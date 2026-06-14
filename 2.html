@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>世界杯全维度预测 | 6月15日四场</title>
+<style>
+:root{--bg:#0a0e17;--card:rgba(255,255,255,0.04);--card2:rgba(255,255,255,0.07);--accent:#ff4757;--accent2:#ffa502;--green:#2ed573;--blue:#1e90ff;--purple:#a855f7;--cyan:#06b6d4;--text:#e8e8e8;--muted:#8892a4;--border:rgba(255,255,255,0.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;line-height:1.6;overflow-x:hidden}
+.container{max-width:900px;margin:0 auto;padding:20px 16px 60px}
+.hero{text-align:center;padding:36px 0 24px;background:radial-gradient(ellipse at 50% 0%,rgba(255,71,87,0.1) 0%,transparent 70%)}
+.hero h1{font-size:1.8rem;font-weight:800;background:linear-gradient(135deg,#ff4757,#ffa502,#1e90ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px}
+.hero .sub{color:var(--muted);font-size:.88rem}
+.hero .date-badge{display:inline-block;margin-top:10px;padding:4px 16px;border-radius:20px;background:rgba(30,144,255,0.1);color:var(--blue);font-size:.78rem;font-weight:600;border:1px solid rgba(30,144,255,0.2)}
+.section-title{font-size:1.15rem;font-weight:700;margin:30px 0 14px;display:flex;align-items:center;gap:8px}
+.section-title::before{content:'';width:4px;height:18px;border-radius:2px}
+.st-red::before{background:linear-gradient(180deg,#ff4757,#ff6b81)}
+.st-blue::before{background:linear-gradient(180deg,#1e90ff,#70a1ff)}
+.st-green::before{background:linear-gradient(180deg,#2ed573,#7bed9f)}
+.st-purple::before{background:linear-gradient(180deg,#a855f7,#c084fc)}
+.st-cyan::before{background:linear-gradient(180deg,#06b6d4,#67e8f9)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:16px;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.mc-red::before{background:linear-gradient(90deg,#ff4757,#ffa502)}
+.mc-blue::before{background:linear-gradient(90deg,#1e90ff,#06b6d4)}
+.mc-green::before{background:linear-gradient(90deg,#2ed573,#ffa502)}
+.mc-purple::before{background:linear-gradient(90deg,#a855f7,#1e90ff)}
+.match-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;flex-wrap:wrap;gap:6px}
+.mh-teams{font-size:1.1rem;font-weight:700}
+.mh-info{color:var(--muted);font-size:.76rem;text-align:right}
+.ring-row{display:flex;justify-content:center;gap:18px;margin:16px 0;flex-wrap:wrap}
+.ring-item{text-align:center}
+.ring-svg{width:96px;height:96px}
+.ring-label{font-size:.68rem;color:var(--muted);margin-top:3px}
+.ring-val{font-size:1.05rem;font-weight:800}
+.stat-vs{margin:6px 0}
+.stat-vs .stat-label{text-align:center;font-size:.7rem;color:var(--muted);margin-bottom:4px}
+.stat-vs .stat-bar{display:flex;align-items:center}
+.stat-vs .bar-l,.stat-vs .bar-r{height:22px;border-radius:3px;display:flex;align-items:center;padding:0 7px;font-size:.7rem;font-weight:700;min-width:30px;transition:width .5s}
+.stat-vs .bar-l{justify-content:flex-end;background:linear-gradient(90deg,rgba(30,144,255,0.45),rgba(30,144,255,0.15));color:#70a1ff}
+.stat-vs .bar-r{justify-content:flex-start;background:linear-gradient(90deg,rgba(255,71,87,0.15),rgba(255,71,87,0.45));color:#ff6b81}
+.stat-vs .bar-m{width:2px;height:22px;background:rgba(255,255,255,0.12);flex-shrink:0}
+.odds-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.8rem}
+.odds-table th{color:var(--muted);font-weight:400;text-align:center;padding:5px 5px;border-bottom:1px solid var(--border);font-size:.7rem}
+.odds-table td{padding:7px 5px;text-align:center;border-bottom:1px solid var(--border)}
+.odds-table tr:last-child td{border-bottom:none}
+.odds-table .hl{color:var(--accent);font-weight:700}
+.pred-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.pred-box{padding:12px;border-radius:10px;text-align:center}
+.pred-box .pc{font-size:.68rem;color:var(--muted);margin-bottom:4px}
+.pred-box .pv{font-size:1.05rem;font-weight:800}
+.pb-r{background:rgba(255,71,87,0.08);border:1px solid rgba(255,71,87,0.18);color:#ff6b81}
+.pb-o{background:rgba(255,165,2,0.08);border:1px solid rgba(255,165,2,0.18);color:#ffa502}
+.pb-b{background:rgba(30,144,255,0.08);border:1px solid rgba(30,144,255,0.18);color:#70a1ff}
+.pb-g{background:rgba(46,213,115,0.08);border:1px solid rgba(46,213,115,0.18);color:#7bed9f}
+.pb-p{background:rgba(168,85,247,0.08);border:1px solid rgba(168,85,247,0.18);color:#c084fc}
+.score-row{display:flex;gap:8px;margin:12px 0;flex-wrap:wrap}
+.score-box{flex:1;min-width:90px;padding:12px;border-radius:10px;text-align:center}
+.sb-hot{background:rgba(255,71,87,0.08);border:1px solid rgba(255,71,87,0.18)}
+.sb-warm{background:rgba(255,165,2,0.08);border:1px solid rgba(255,165,2,0.18)}
+.sb-cool{background:rgba(30,144,255,0.08);border:1px solid rgba(30,144,255,0.18)}
+.sb-green{background:rgba(46,213,115,0.08);border:1px solid rgba(46,213,115,0.18)}
+.sb-label{font-size:.65rem;color:var(--muted);margin-bottom:3px}
+.sb-score{font-size:1.4rem;font-weight:800}
+.sb-prob{font-size:.68rem;color:var(--muted);margin-top:2px}
+.alert-box{border-radius:10px;padding:12px;margin:10px 0;display:flex;align-items:flex-start;gap:8px;font-size:.8rem;line-height:1.6}
+.alert-red{background:rgba(255,71,87,0.07);border:1px solid rgba(255,71,87,0.18)}
+.alert-amber{background:rgba(255,165,2,0.07);border:1px solid rgba(255,165,2,0.18)}
+.alert-blue{background:rgba(30,144,255,0.07);border:1px solid rgba(30,144,255,0.18)}
+.alert-icon{font-size:1.2rem;flex-shrink:0}
+.tactics-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.tactics-box{padding:12px;border-radius:10px;border:1px solid var(--border)}
+.tactics-box h4{font-size:.82rem;margin-bottom:6px}
+.t-item{font-size:.76rem;color:var(--muted);margin-bottom:3px;line-height:1.5}
+.tb-blue{background:rgba(30,144,255,0.03);border-color:rgba(30,144,255,0.12)}
+.tb-red{background:rgba(255,71,87,0.03);border-color:rgba(255,71,87,0.12)}
+.timeline{position:relative;padding-left:22px;margin:10px 0}
+.timeline::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:var(--border)}
+.tl-item{position:relative;padding:5px 0 12px;font-size:.78rem}
+.tl-item::before{content:'';position:absolute;left:-18px;top:9px;width:8px;height:8px;border-radius:50%;border:2px solid var(--accent);background:var(--bg)}
+.tl-item.tl-b::before{border-color:var(--blue)}
+.tl-item.tl-g::before{border-color:var(--green)}
+.tl-time{font-weight:700;font-size:.7rem}
+.tl-tr{color:var(--accent)}
+.tl-tb{color:var(--blue)}
+.tl-tg{color:var(--green)}
+.tl-text{color:var(--muted);margin-top:1px}
+.bet-card{border-radius:12px;padding:14px;margin-bottom:10px;display:flex;align-items:flex-start;gap:10px;font-size:.82rem}
+.bet-card .bi{font-size:1.4rem;flex-shrink:0}
+.bet-card .bt{font-weight:700;font-size:.88rem;margin-bottom:3px}
+.bet-card .bd{color:var(--muted);font-size:.78rem;line-height:1.6}
+.bet-card .bo{font-size:.76rem;font-weight:700;margin-top:3px}
+.bet-hot{background:rgba(255,71,87,0.05);border:1px solid rgba(255,71,87,0.12)}
+.bet-warm{background:rgba(255,165,2,0.05);border:1px solid rgba(255,165,2,0.12)}
+.bet-cool{background:rgba(30,144,255,0.05);border:1px solid rgba(30,144,255,0.12)}
+.summary-card{background:var(--card2);border:1px solid var(--border);border-radius:14px;padding:20px;margin:20px 0}
+.bar-chart{margin:6px 0}
+.bar-row{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:.78rem}
+.bar-label{width:130px;text-align:right;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar-track{flex:1;height:20px;background:rgba(255,255,255,0.04);border-radius:4px;overflow:hidden}
+.bar-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:6px;font-size:.68rem;font-weight:700;color:#fff;min-width:28px;transition:width .5s}
+.citations{margin-top:36px;padding-top:16px;border-top:1px solid var(--border);font-size:.68rem;color:var(--muted);line-height:1.9}
+.citations sup{color:var(--accent);cursor:help}
+@media(max-width:768px){
+.hero h1{font-size:1.4rem}
+.container{padding:12px 12px 40px}
+.card{padding:14px 12px}
+.mh-teams{font-size:1rem}
+.ring-row{gap:12px}
+.ring-svg{width:80px;height:80px}
+.score-row{flex-direction:column}
+.tactics-grid{grid-template-columns:1fr}
+.pred-grid{grid-template-columns:1fr 1fr}
+.odds-table{font-size:.72rem}
+.bar-label{width:100px;font-size:.72rem}
+}
+@media(max-width:400px){
+.pred-grid{grid-template-columns:1fr}
+.hero h1{font-size:1.2rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="hero">
+<h1>⚽ 世界杯全维度预测</h1>
+<p class="sub">6月15日 · E组 & F组首轮四场</p>
+<div class="date-badge">2026年6月15日 · E/F组第一轮</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 比赛1：德国 vs 库拉索 -->
+<!-- ============================================================ -->
+<div class="section-title st-red">比赛1：🇩🇪 德国 vs 库拉索 🇨🇼</div>
+<div class="card mc-red">
+<div class="match-header">
+<div class="mh-teams">🇩🇪 德国 vs 库拉索 🇨🇼</div>
+<div class="mh-info">E组第1轮 · 6/15 01:00<br>休斯顿NRG体育场</div>
+</div>
+
+<div class="ring-row">
+<div class="ring-item">
+<svg class="ring-svg" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#2ed573" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="26.4" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+<text x="50" y="48" text-anchor="middle" fill="#2ed573" font-size="17" font-weight="800">89%</text>
+<text x="50" y="62" text-anchor="middle" fill="#8892a4" font-size="8">德国胜</text>
+</svg>
+<div class="ring-label">碾压级</div>
+</div>
+<div class="ring-item">
+<svg class="ring-svg" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#ffa502" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="228.6" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+<text x="50" y="48" text-anchor="middle" fill="#ffa502" font-size="17" font-weight="800">9%</text>
+<text x="50" y="62" text-anchor="middle" fill="#8892a4" font-size="8">平局</text>
+</svg>
+<div class="ring-label">极低</div>
+</div>
+<div class="ring-item">
+<svg class="ring-svg" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#ff4757" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="243.7" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+<text x="50" y="48" text-anchor="middle" fill="#ff4757" font-size="17" font-weight="800">3%</text>
+<text x="50" y="62" text-anchor="middle" fill="#8892a4" font-size="8">库拉索胜</text>
+</svg>
+<div class="ring-label">几乎不可能</div>
+</div>
+</div>
+
+<div class="stat-vs"><div class="stat-label">全队身价（亿€）</div><div class="stat-bar"><div class="bar-l" style="width:97%">9.47</div><div class="bar-m"></div><div class="bar-r" style="width:3%">0.26</div></div></div>
+<div class="stat-vs"><div class="stat-label">FIFA排名差距</div><div class="stat-bar"><div class="bar-l" style="width:90%">#4</div><div class="bar-m"></div><div class="bar-r" style="width:10%">#82</div></div></div>
+<div class="stat-vs"><div class="stat-label">近10场胜率</div><div class="stat-bar"><div class="bar-l" style="width:70%">7胜2平1负</div><div class="bar-m"></div><div class="bar-r" style="width:50%">5胜2平3负</div></div></div>
+
+<table class="odds-table">
+<tr><th>类型</th><th>主胜(德国)</th><th>平局</th><th>客胜(库拉索)</th></tr>
+<tr><td>欧赔即时</td><td class="hl">1.04</td><td>15.00</td><td>41.00</td></tr>
+<tr><td>亚盘</td><td colspan="3">德国 -3.5 (0.90)</td></tr>
+<tr><td>大小球</td><td colspan="3">4.5 大0.92 / 小0.94</td></tr>
+</table>
+
+<div class="alert-box alert-amber">
+<span class="alert-icon">⚠️</span>
+<div><strong>历史规律警示：</strong>社交媒体疯传"世界杯首轮身价差20倍以上的对阵100%爆冷"，但Opta超算给出德国不胜概率仅9.3%<sup>1</sup>。2018年德国0-2韩国的阴影仍在，但本场对手差距过于悬殊，冷门几无可能。真正的问题不是德国赢不赢，而是赢几个。</div>
+</div>
+
+<div class="tactics-grid">
+<div class="tactics-box tb-blue">
+<h4>🇩🇪 德国 · 4-2-3-1 控球碾压</h4>
+<div class="t-item">🔹 穆西亚拉+维尔茨双核驱动，技术碾压</div>
+<div class="t-item">🔹 高位逼抢+快速转移，拉开空间</div>
+<div class="t-item">🔹 边路穆科科/萨内速度冲击</div>
+<div class="t-item">🔹 定位球多点包抄，身高碾压</div>
+</div>
+<div class="tactics-box tb-red">
+<h4>🇨🇼 库拉索 · 5-4-1 铁桶阵</h4>
+<div class="t-item">🔸 5后卫+4中场密集防守</div>
+<div class="t-item">🔸 偶尔利用边路快攻偷袭</div>
+<div class="t-item">🔸 身体对抗不怵，但技术差距明显</div>
+<div class="t-item">🔸 目标：减少失球，争取尊严</div>
+</div>
+</div>
+
+<div class="score-row">
+<div class="score-box sb-green"><div class="sb-label">⭐ 首选比分</div><div class="sb-score">4-0</div><div class="sb-prob">概率 ~35%</div></div>
+<div class="score-box sb-cool"><div class="sb-label">⭐ 次选比分</div><div class="sb-score">3-0</div><div class="sb-prob">概率 ~20%</div></div>
+<div class="score-box sb-warm"><div class="sb-label">大胜比分</div><div class="sb-score">5-0</div><div class="sb-prob">概率 ~18%</div></div>
+</div>
+
+<div class="pred-grid">
+<div class="pred-box pb-g"><div class="pc">胜平负</div><div class="pv">德国胜</div></div>
+<div class="pred-box pb-o"><div class="pc">比分</div><div class="pv">4-0 / 3-0</div></div>
+<div class="pred-box pb-b"><div class="pc">半全场</div><div class="pv">胜胜</div></div>
+<div class="pred-box pb-r"><div class="pc">总进球</div><div class="pv">4-5球</div></div>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 比赛2：荷兰 vs 日本 -->
+<!-- ============================================================ -->
+<div class="section-title st-blue">比赛2：🇳🇱 荷兰 vs 日本 🇯🇵</div>
+<div class="card mc-blue">
+<div class="match-header">
+<div class="mh-teams">🇳🇱 荷兰 vs 日本 🇯🇵</div>
+<div class="mh-info">F组第1轮 · 6/15 04:00<br>达拉斯AT&T体育场</div>
+</div>
+
+<div class="ring-row">
+<div class="ring-item">
+<svg class="ring-svg" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#2ed573" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="127.9" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+<text x="50" y="48" text-anchor="middle" fill="#2ed573" font-size="17" font-weight="800">49%</text>
+<text x="50" y="62" text-anchor="middle" fill="#8892a4" font-size="8">荷兰胜</text>
+</svg>
+<div class="ring-label">略占优</div>
+</div>
+<div class="ring-item">
+<svg class="ring-svg" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#ffa502" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="188.9" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+<text x="50" y="48" text-anchor="middle" fill="#ffa502" font-size="17" font-weight="800">25%</text>
+<text x="50" y="62" text-anchor="middle" fill="#8892a4" font-size="8">平局</text>
+</svg>
+<div class="ring-label">偏高</div>
+</div>
+<div class="ring-item">
+<svg class="ring-svg" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#ff4757" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="185.9" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+<text x="50" y="48" text-anchor="middle" fill="#ff4757" font-size="17" font-weight="800">26%</text>
+<text x="50" y="62" text-anchor="middle" fill="#8892a4" font-size="8">日本胜</text>
+</svg>
+<div class="ring-label">有威胁</div>
+</div>
+</div>
+
+<div class="stat-vs"><div class="stat-label">全队身价（亿€）</div><div class="stat-bar"><div class="bar-l" style="width:65%">5.8</div><div class="bar-m"></div><div class="bar-r" style="width:35%">3.1</div></div></div>
+<div class="stat-vs"><div class="stat-label">FIFA排名</div><div class="stat-bar"><div class="bar-l" style="width:55%">#8</div><div class="bar-m"></div><div class="bar-r" style="width:45%">#18</div></div></div>
+<div class="stat-vs"><div class="stat-label">近10场胜率</div><div class="stat-bar"><div class="bar-l" style="width:58%">6胜2平2负</div><div class="bar-m"></div><div class="bar-r" style="width:55%">6胜1平3负</div></div></div>
+
+<table class="odds-table">
+<tr><th>类型</th><th>主胜(荷兰)</th><th>平局</th><th>客胜(日本)</th></tr>
+<tr><td>欧赔初盘</td><td>1.65</td><td>3.50</td><td>5.00</td></tr>
+<tr><td>欧赔即时</td><td class="hl">1.78 ↑</td><td>3.30</td><td>3.78 ↓</td></tr>
+<tr><td>亚盘初→即时</td><td colspan="3">荷兰-0.75 → <strong>-0.50</strong> (退盘!)</td></tr>
+<tr><td>大小球</td><td colspan="3">2.5 大0.92 / 小0.94</td></tr>
+</table>
+
+<div class="alert-box alert-red">
+<span class="alert-icon">🚨</span>
+<div><strong>亚盘退盘预警！</strong>亚盘从荷兰-0.75退至-0.50，上盘水位持续升高，机构对荷兰赢球信心动摇。日本方向凯利方差达7，市场已嗅到冷门味道<sup>2</sup>。日本中场三笘薰+久保建英+镰田大地的组合足以撕裂任何防线，荷兰"锋无力"顽疾未解。</div>
+</div>
+
+<div class="tactics-grid">
+<div class="tactics-box tb-blue">
+<h4>🇳🇱 荷兰 · 3-4-2-1 全攻全守</h4>
+<div class="t-item">🔹 范迪克统领三中卫，防守稳固</div>
+<div class="t-item">🔹 德容中场调度+西蒙斯前插</div>
+<div class="t-item">🔹 加克波左边路持球推进</div>
+<div class="t-item">🔹 锋线终结力不足，创造机会转化率偏低</div>
+</div>
+<div class="tactics-box tb-red">
+<h4>🇯🇵 日本 · 4-2-3-1 技术反击</h4>
+<div class="t-item">🔸 三笘薰左路突破+久保建英右路内切</div>
+<div class="t-item">🔸 镰田大地中场串联+远藤航防守拦截</div>
+<div class="t-item">🔸 高位逼抢+快速转换，制造混乱</div>
+<div class="t-item">🔸 防守端定位球和对空争顶偏弱</div>
+</div>
+</div>
+
+<div class="alert-box alert-blue">
+<span class="alert-icon">⚔️</span>
+<div><strong>战术克制：</strong>日本两翼齐飞恰好冲击荷兰三中卫的翼位空当，三笘薰vs弗林蓬的边路对决可能是全场胜负手。日本2022世界杯连胜德西两强的底气不容小觑<sup>3</sup>。</div>
+</div>
+
+<div class="score-row">
+<div class="score-box sb-cool"><div class="sb-label">⭐ 首选比分</div><div class="sb-score">1-1</div><div class="sb-prob">概率 ~22%</div></div>
+<div class="score-box sb-green"><div class="sb-label">荷兰小胜</div><div class="sb-score">1-0</div><div class="sb-prob">概率 ~18%</div></div>
+<div class="score-box sb-hot"><div class="sb-label">日本爆冷</div><div class="sb-score">1-2</div><div class="sb-prob">概率 ~12%</div></div>
+</div>
+
+<div class="pred-grid">
+<div class="pred-box pb-r"><div class="pc">胜平负</div><div class="pv">平/负</div></div>
+<div class="pred-box pb-b"><div class="pc">比分</div><div class="pv">1-1 / 1-0</div></div>
+<div class="pred-box pb-o"><div class="pc">半全场</div><div class="pv">平平/平负</div></div>
+<div class="pred-box pb-g"><div class="pc">总进球</div><div class="pv">1-2球</div></div>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 比赛3：科特迪瓦 vs 厄瓜多尔 -->
+<!-- ============================================================ -->
+<div class="section-title st-green">比赛3：🇨🇮 科特迪瓦 vs 厄瓜多尔 🇪🇨</div>
+<div class="card mc-green">
+<div class="match-header">
+<div class="mh-teams">🇨🇮 科特迪瓦 vs 厄瓜多尔 🇪🇨</div>
+<div class="mh-info">E组第1轮 · 6/15 07:00<br>费城林肯金融球场</div>
+</div>
+
+<div class="ring-row">
+<div class="ring-item">
+<svg class="ring-svg" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#1e90ff" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="165.8" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+<text x="50" y="48" text-anchor="middle" fill="#1e90ff" font-size="17" font-weight="800">34%</text>
+<text x="50" y="62" text-anchor="middle" fill="#8892a4" font-size="8">科特迪瓦胜</text>
+</svg>
+<div class="ring-label">偏弱</div>
+</div>
+<div class="ring-item">
+<svg class="ring-svg" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#ffa502" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="165.8" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+<text x="50" y="48" text-anchor="middle" fill="#ffa502" font-size="17" font-weight="800">34%</text>
+<text x="50" y="62" text-anchor="middle" fill="#8892a4" font-size="8">平局</text>
+</svg>
+<div class="ring-label" style="color:#ffa502">最高!</div>
+</div>
+<div class="ring-item">
+<svg class="ring-svg" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#ff4757" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="183.4" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+<text x="50" y="48" text-anchor="middle" fill="#ff4757" font-size="17" font-weight="800">27%</text>
+<text x="50" y="62" text-anchor="middle" fill="#8892a4" font-size="8">厄瓜多尔胜</text>
+</svg>
+<div class="ring-label">不可忽视</div>
+</div>
+</div>
+
+<div class="stat-vs"><div class="stat-label">全队身价（亿€）</div><div class="stat-bar"><div class="bar-l" style="width:55%">3.5</div><div class="bar-m"></div><div class="bar-r" style="width:45%">2.8</div></div></div>
+<div class="stat-vs"><div class="stat-label">FIFA排名</div><div class="stat-bar"><div class="bar-l" style="width:52%">#38</div><div class="bar-m"></div><div class="bar-r" style="width:48%">#42</div></div></div>
+<div class="stat-vs"><div class="stat-label">近10场战绩</div><div class="stat-bar"><div class="bar-l" style="width:55%">6胜2平2负</div><div class="bar-m"></div><div class="bar-r" style="width:52%">5胜3平2负</div></div></div>
+
+<table class="odds-table">
+<tr><th>类型</th><th>主胜(科特迪瓦)</th><th>平局</th><th>客胜(厄瓜多尔)</th></tr>
+<tr><td>竞彩即时</td><td>2.20</td><td class="hl">2.65</td><td>3.40</td></tr>
+<tr><td>亚盘</td><td colspan="3">科特迪瓦 -0/0.5 (0.82)</td></tr>
+<tr><td>大小球</td><td colspan="3">2.25 大0.90 / 小0.96</td></tr>
+</table>
+
+<div class="alert-box alert-amber">
+<span class="alert-icon">⚖️</span>
+<div><strong>最均衡对决：</strong>平局隐含概率34%为四场最高！科特迪瓦拥有非洲杯冠军底蕴+边路冲击力，但双中卫伤缺导致防线零磨合；厄瓜多尔南美铁桶+高位逼抢，防守端10场零封率达40%<sup>4</sup>。这是真正的"矛盾之战"。</div>
+</div>
+
+<div class="tactics-grid">
+<div class="tactics-box tb-blue">
+<h4>🇨🇮 科特迪瓦 · 4-3-3 边路风暴</h4>
+<div class="t-item">🔹 佩佩+扎哈双翼齐飞，速度碾压</div>
+<div class="t-item">🔹 中场凯西推进+远射</div>
+<div class="t-item">🔹 定位球多点包抄，身体优势明显</div>
+<div class="t-item">🔸 双中卫伤缺，防线组织存隐患</div>
+</div>
+<div class="tactics-box tb-red">
+<h4>🇪🇨 厄瓜多尔 · 4-4-2 铁壁反击</h4>
+<div class="t-item">🔸 因卡皮耶领衔稳固防线</div>
+<div class="t-item">🔸 凯塞多中场绞杀+快速出球</div>
+<div class="t-item">🔸 瓦伦西亚抢点+反击提速</div>
+<div class="t-item">🔸 高原主场优势不再，中立地实力打折</div>
+</div>
+</div>
+
+<div class="score-row">
+<div class="score-box sb-warm"><div class="sb-label">⭐ 首选比分</div><div class="sb-score">1-1</div><div class="sb-prob">概率 ~20%</div></div>
+<div class="score-box sb-green"><div class="sb-label">科特迪瓦小胜</div><div class="sb-score">1-0</div><div class="sb-prob">概率 ~16%</div></div>
+<div class="score-box sb-hot"><div class="sb-label">厄瓜多尔胜</div><div class="sb-score">0-1</div><div class="sb-prob">概率 ~12%</div></div>
+</div>
+
+<div class="pred-grid">
+<div class="pred-box pb-o"><div class="pc">胜平负</div><div class="pv">平局</div></div>
+<div class="pred-box pb-b"><div class="pc">比分</div><div class="pv">1-1 / 1-0</div></div>
+<div class="pred-box pb-p"><div class="pc">半全场</div><div class="pv">平平/平胜</div></div>
+<div class="pred-box pb-g"><div class="pc">总进球</div><div class="pv">1-2球</div></div>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 比赛4：瑞典 vs 突尼斯 -->
+<!-- ============================================================ -->
+<div class="section-title st-purple">比赛4：🇸🇪 瑞典 vs 突尼斯 🇹🇳</div>
+<div class="card mc-purple">
+<div class="match-header">
+<div class="mh-teams">🇸🇪 瑞典 vs 突尼斯 🇹🇳</div>
+<div class="mh-info">F组第1轮 · 6/15 10:00<br>蒙特雷BBVA体育场</div>
+</div>
+
+<div class="ring-row">
+<div class="ring-item">
+<svg class="ring-svg" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#a855f7" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="117.6" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+<text x="50" y="48" text-anchor="middle" fill="#a855f7" font-size="17" font-weight="800">53%</text>
+<text x="50" y="62" text-anchor="middle" fill="#8892a4" font-size="8">瑞典胜</text>
+</svg>
+<div class="ring-label">实力占优</div>
+</div>
+<div class="ring-item">
+<svg class="ring-svg" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#ffa502" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="178.6" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+<text x="50" y="48" text-anchor="middle" fill="#ffa502" font-size="17" font-weight="800">29%</text>
+<text x="50" y="62" text-anchor="middle" fill="#8892a4" font-size="8">平局</text>
+</svg>
+<div class="ring-label" style="color:#ffa502">偏高!</div>
+</div>
+<div class="ring-item">
+<svg class="ring-svg" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#ff4757" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="206.2" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+<text x="50" y="48" text-anchor="middle" fill="#ff4757" font-size="17" font-weight="800">18%</text>
+<text x="50" y="62" text-anchor="middle" fill="#8892a4" font-size="8">突尼斯胜</text>
+</svg>
+<div class="ring-label">有隐患</div>
+</div>
+</div>
+
+<div class="stat-vs"><div class="stat-label">全队身价（亿€）</div><div class="stat-bar"><div class="bar-l" style="width:85%">4.06</div><div class="bar-m"></div><div class="bar-r" style="width:15%">0.70</div></div></div>
+<div class="stat-vs"><div class="stat-label">FIFA排名</div><div class="stat-bar"><div class="bar-l" style="width:60%">#26</div><div class="bar-m"></div><div class="bar-r" style="width:40%">#28</div></div></div>
+<div class="stat-vs"><div class="stat-label">近10场战绩</div><div class="stat-bar"><div class="bar-l" style="width:53%">5胜2平3负</div><div class="bar-m"></div><div class="bar-r" style="width:50%">5胜3平2负</div></div></div>
+
+<table class="odds-table">
+<tr><th>类型</th><th>主胜(瑞典)</th><th>平局</th><th>客胜(突尼斯)</th></tr>
+<tr><td>竞彩即时</td><td>1.71</td><td class="hl">3.15</td><td>4.40</td></tr>
+<tr><td>亚盘</td><td colspan="3">瑞典 -0.5/0.75 (0.88)</td></tr>
+<tr><td>大小球</td><td colspan="3">2/2.25 大0.88 / 小1.00</td></tr>
+</table>
+
+<div class="alert-box alert-amber">
+<span class="alert-icon">🛡️</span>
+<div><strong>突尼斯防守铁壁：</strong>近10场比赛多达7场零封对手，防守纪律惊人！但进攻端创造力匮乏，场均仅0.8球。瑞典身价是突尼斯6倍，但攻坚能力偏弱——过去面对铁桶阵时常陷入苦战。29%的平局概率意味着本场很可能是低比分拉锯<sup>5</sup>。</div>
+</div>
+
+<div class="tactics-grid">
+<div class="tactics-box tb-blue">
+<h4>🇸🇪 瑞典 · 4-4-2 北欧硬朗</h4>
+<div class="t-item">🔹 伊萨克+库卢塞夫斯基锋线搭档</div>
+<div class="t-item">🔹 福斯贝里中场组织+远射</div>
+<div class="t-item">🔹 边路传中+定位球高空轰炸</div>
+<div class="t-item">🔸 面对密集防守攻坚手段有限</div>
+</div>
+<div class="tactics-box tb-red">
+<h4>🇹🇳 突尼斯 · 5-4-1 铁桶反击</h4>
+<div class="t-item">🔸 五后卫+双后腰密集中路防守</div>
+<div class="t-item">🔸 布隆+姆萨克尼反击速度偷袭</div>
+<div class="t-item">🔸 防守纪律极佳，阵地战极难突破</div>
+<div class="t-item">🔸 进攻创造力不足，得分手段单一</div>
+</div>
+</div>
+
+<div class="score-row">
+<div class="score-box sb-cool"><div class="sb-label">⭐ 首选比分</div><div class="sb-score">1-0</div><div class="sb-prob">概率 ~24%</div></div>
+<div class="score-box sb-warm"><div class="sb-label">次选比分</div><div class="sb-score">1-1</div><div class="sb-prob">概率 ~18%</div></div>
+<div class="score-box sb-hot"><div class="sb-label">突尼斯偷胜</div><div class="sb-score">0-1</div><div class="sb-prob">概率 ~8%</div></div>
+</div>
+
+<div class="pred-grid">
+<div class="pred-box pb-p"><div class="pc">胜平负</div><div class="pv">瑞典胜/平</div></div>
+<div class="pred-box pb-b"><div class="pc">比分</div><div class="pv">1-0 / 1-1</div></div>
+<div class="pred-box pb-o"><div class="pc">半全场</div><div class="pv">平胜/平平</div></div>
+<div class="pred-box pb-g"><div class="pc">总进球</div><div class="pv">1-2球</div></div>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 总结 -->
+<!-- ============================================================ -->
+<div class="section-title st-green">📊 四场预测总览</div>
+<div class="summary-card">
+
+<div class="bar-chart">
+<div class="bar-row"><div class="bar-label">🇩🇪 德国胜概率</div><div class="bar-track"><div class="bar-fill" style="width:89%;background:linear-gradient(90deg,#2ed573,#7bed9f)">89%</div></div></div>
+<div class="bar-row"><div class="bar-label">🇳🇱 荷兰胜概率</div><div class="bar-track"><div class="bar-fill" style="width:49%;background:linear-gradient(90deg,#1e90ff,#70a1ff)">49%</div></div></div>
+<div class="bar-row"><div class="bar-label">🇨🇮 科特迪瓦胜率</div><div class="bar-track"><div class="bar-fill" style="width:34%;background:linear-gradient(90deg,#ffa502,#ffda79)">34%</div></div></div>
+<div class="bar-row"><div class="bar-label">🇸🇪 瑞典胜概率</div><div class="bar-track"><div class="bar-fill" style="width:53%;background:linear-gradient(90deg,#a855f7,#c084fc)">53%</div></div></div>
+</div>
+
+<div style="margin-top:16px;font-size:.82rem;line-height:1.8">
+<div>🔹 <strong>德国 vs 库拉索</strong>：悬念仅在于赢几个，4-0最可能，关注让球盘德国-3.5</div>
+<div>🔹 <strong>荷兰 vs 日本</strong>：⚡<span style="color:#ff4757;font-weight:700">爆冷高风险！</span>亚盘退盘+日本两翼齐飞，1-1平局性价比最高</div>
+<div>🔹 <strong>科特迪瓦 vs 厄瓜多尔</strong>：⚖️四场最均衡对决，平局概率34%全场最高，小球可期</div>
+<div>🔹 <strong>瑞典 vs 突尼斯</strong>：🛡️矛盾之战，瑞典攻坚遇铁桶，1-0小胜或1-1闷平</div>
+</div>
+
+<div style="margin-top:16px">
+<div style="font-weight:700;font-size:.92rem;margin-bottom:10px">💡 四场串关策略</div>
+
+<div class="bet-card bet-hot">
+<div class="bi">🔥</div>
+<div><div class="bt">稳妥3串1</div><div class="bd">德国胜 × 瑞典胜 × 科特迪瓦不败（胜/平）<br>赔率约 1.04 × 1.71 × 1.35 ≈ <strong>2.39</strong></div></div>
+</div>
+
+<div class="bet-card bet-warm">
+<div class="bi">⭐</div>
+<div><div class="bt">价值4串1</div><div class="bd">德国让胜(-3) × 日本+0.5 × 科特迪瓦+0/0.5 × 瑞典-0.5/0.75<br>赔率约 <strong>4.8-5.5</strong>，覆盖冷门方向</div></div>
+</div>
+
+<div class="bet-card bet-cool">
+<div class="bi">💎</div>
+<div><div class="bt">高赔博弈串</div><div class="bd">德国4+球 × 荷兰vs日本平局 × 科特迪瓦vs厄瓜多尔平局 × 瑞典1-0<br>赔率约 <strong>25-35</strong>，小额博冷</div></div>
+</div>
+</div>
+</div>
+
+<div class="citations">
+<strong>数据来源：</strong><br>
+<sup>1</sup> Opta超级计算机 · 德国vs库拉索预测 (optasports.com)<br>
+<sup>2</sup> 亚盘异动数据 · 荷兰vs日本退盘分析<sup>3</sup> 2022世界杯日本战绩参考<br>
+<sup>4</sup> WhoScored · 科特迪瓦/厄瓜多尔防守数据统计<sup>5</sup> NerdyTips · 瑞典vs突尼斯大小球模型<br>
+<sup>6</sup> 竞彩官方赔率 · 2026年6月14日更新<sup>7</sup> FIFA世界排名 · 2026年6月<br>
+⚠️ 本报告仅供参考，不构成投注建议。赛事结果受多种不可预见因素影响。
+</div>
+
+</div>
+</body>
+</html>
