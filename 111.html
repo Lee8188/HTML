@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026志愿填报详细方案｜物理类444分·深圳户籍·工科</title>
+<style>
+  :root{
+    --bg:#f4f6fa;--card:#fff;--ink:#1f2733;--muted:#5b6675;--line:#e3e8f0;
+    --accent:#1f6feb;--good:#16a34a;--warn:#d97706;--bad:#dc2626;--tag-bg:#eef4ff;
+    --sz:#fae8ff;--sz-c:#86198f;--rail:#fef3c7;--rail-c:#92400e;
+    --air:#e0f2fe;--air-c:#075985;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",system-ui,sans-serif;
+    line-height:1.7;font-size:15px;}
+  .wrap{max-width:1050px;margin:0 auto;padding:24px 18px 60px;}
+  header{background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;border-radius:16px;
+    padding:28px 26px;margin-bottom:22px;box-shadow:0 6px 20px rgba(37,99,235,.18);}
+  header h1{margin:0 0 8px;font-size:24px;}
+  header .sub{opacity:.92;font-size:14px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:20px 22px;margin-bottom:18px;box-shadow:0 2px 8px rgba(20,40,80,.04);}
+  h2{font-size:19px;margin:4px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--tag-bg);
+    display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  h2 .n{background:var(--accent);color:#fff;font-size:13px;width:28px;height:28px;border-radius:7px;
+    display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;}
+  h3{font-size:16px;margin:18px 0 8px;color:#1e3a8a;}
+  h4{font-size:14.5px;margin:14px 0 6px;color:#374151;}
+  .keybox{border-left:5px solid var(--bad);background:#fef2f2;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .goodbox{border-left:5px solid var(--good);background:#f0fdf4;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .warnbox{border-left:5px solid var(--warn);background:#fffbeb;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  .infobox{border-left:5px solid var(--accent);background:#eff6ff;border-radius:8px;padding:14px 16px;margin:12px 0;}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13.5px;}
+  th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top;}
+  th{background:#f1f5fb;font-weight:600;color:#27364a;}
+  tr:nth-child(even) td{background:#fafcff;}
+  td.r,th.r{text-align:right;}td.c,th.c{text-align:center;}
+  .tag{display:inline-block;padding:2px 7px;border-radius:5px;font-size:11.5px;font-weight:600;white-space:nowrap;}
+  .t-chong{background:#fef3c7;color:#92400e;}
+  .t-wen{background:#dcfce7;color:#166534;}
+  .t-bao{background:#dbeafe;color:#1e40af;}
+  .t-bad{background:#fee2e2;color:#991b1b;}
+  .t-sz{background:var(--sz);color:var(--sz-c);}
+  .t-rail{background:var(--rail);color:var(--rail-c);}
+  .t-air{background:var(--air);color:var(--air-c);}
+  .t-eng{background:#e0e7ff;color:#3730a3;}
+  .t-ok{background:#dcfce7;color:#166534;}
+  .t-no{background:#fee2e2;color:#991b1b;}
+  .t-warn{background:#fef3c7;color:#92400e;}
+  .lead{font-size:16px;font-weight:600;}
+  ul{margin:8px 0 8px 4px;padding-left:20px;}li{margin:5px 0;}
+  .stat{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0;}
+  .stat .s{flex:1;min-width:130px;background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center;}
+  .stat .s .v{font-size:20px;font-weight:700;color:#1e3a8a;}
+  .stat .s .l{font-size:12px;color:var(--muted);margin-top:2px;}
+  .src{color:var(--muted);font-size:12px;}
+  .small{font-size:12.5px;color:var(--muted);}
+  .hl{background:#fff7ed;padding:1px 5px;border-radius:4px;font-weight:600;color:#9a3412;}
+  .star{color:#dc2626;font-weight:700;}
+  .step-header{background:linear-gradient(90deg,#1e3a8a,#2563eb);color:#fff;border-radius:10px;
+    padding:10px 16px;margin:20px 0 10px;font-size:17px;font-weight:600;display:flex;align-items:center;gap:8px;}
+  .step-header .num{background:#fff;color:#1e3a8a;width:26px;height:26px;border-radius:6px;
+    display:inline-flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+  .body-table{font-size:13px;}
+  .body-table th{background:#fef3c7;}
+  .body-table td.ok{color:#166534;font-weight:600;}
+  .body-table td.no{color:#991b1b;font-weight:600;}
+  .body-table td.warn{color:#92400e;font-weight:600;}
+  .proj-list{background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13.5px;}
+  .proj-list b{color:#1e3a8a;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>2026高考志愿填报详细方案（按你的7步策略）</h1>
+  <div class="sub">
+    考生：物理类 444分 ｜ 排位 276167 ｜ 深圳户籍 ｜ 选科 物+化+地 ｜ 本科线425<br>
+    意向：工科 + 铁路 + 民航 ｜ 身高1.69m ｜ 裸眼视力 左4.6 / 右4.9<br>
+    筛选规则：仅普通类（排除中外合作/协同培养/联合培养/校企/国际班/少数民族/预科等）<br>
+    数据来源：广东省教育考试院 2025年投档情况PDF（本科+专科物理类）
+  </div>
+</header>
+
+<!-- 身体条件分析 -->
+<div class="card">
+  <h2>身体条件与专业匹配分析</h2>
+  <p class="lead">你的身体条件（身高1.69m，裸眼视力左4.6/右4.9）直接影响铁路、民航部分专业的报考资格。以下是逐类专业匹配结果：</p>
+  <table class="body-table">
+    <tr><th>专业类型</th><th class="c">身高要求</th><th class="c">视力要求</th><th class="c">你的匹配</th><th>说明</th></tr>
+    <tr><td><b>飞机机电设备维修</b><br>飞机结构修理/电子设备维修</td><td class="c">不限</td><td class="c">仅要求无色盲</td><td class="c ok">✅ 可报</td><td>无身高限制、无裸眼视力数值门槛，仅要求无色盲。你的条件完全达标。</td></tr>
+    <tr><td><b>铁道机车（检修方向）</b></td><td class="c">≥168cm</td><td class="c">裸眼≥4.6</td><td class="c ok">✅ 可报</td><td>你1.69m≥168cm达标；裸眼左4.6=4.6刚好达标，右4.9>4.6达标。<b>刚好卡线，注意确认。</b></td></tr>
+    <tr><td><b>铁道工程技术</b></td><td class="c">≥168cm<br>（＜168慎报）</td><td class="c">无色盲<br>（未设裸眼数值）</td><td class="c ok">✅ 可报</td><td>你1.69m≥168cm达标，无裸眼视力硬性门槛。</td></tr>
+    <tr><td><b>城市轨道交通运营管理</b></td><td class="c">因校而异<br>通常≥168cm</td><td class="c">无色盲</td><td class="c ok">✅ 可报</td><td>深信大505组含此专业，多数院校未设严格裸眼要求。</td></tr>
+    <tr><td><b>民航安全技术管理</b><br>（安检）</td><td class="c">≥172cm<br>（＜172慎报）</td><td class="c">无色盲</td><td class="c warn">⚠ 慎报</td><td>你1.69m＜172cm，<b>技术上可报</b>但学校提示"因用人单位要求慎报"，就业端可能受限。</td></tr>
+    <tr><td>铁道交通运营管理<br>（高铁乘务方向）</td><td class="c">≥172cm<br>（＜172慎报）</td><td class="c">裸眼＜4.7慎报</td><td class="c no">❌ 不建议</td><td>你1.69m＜172cm且左眼4.6＜4.7，双重不达标。</td></tr>
+    <tr><td>铁道机车（驾驶方向）</td><td class="c">≥170cm</td><td class="c">裸眼≥4.9</td><td class="c no">❌ 不可报</td><td>你1.69m＜170cm且左眼4.6＜4.9，双重不达标。</td></tr>
+    <tr><td>空中乘务/空保</td><td class="c">男≥173-175cm</td><td class="c">矫正视力达标</td><td class="c no">❌ 不可报</td><td>你1.69m远低于173cm门槛。</td></tr>
+  </table>
+  <div class="goodbox">
+    <b>你的身体条件最佳匹配方向：</b><br>
+    ① <b>飞机维修类</b>（飞机机电设备维修、飞机结构修理）—— 无身高限制，最推荐<br>
+    ② <b>铁道工程/检修类</b>（铁道工程技术、铁道机车检修方向）—— 身高视力刚好卡线<br>
+    ③ <b>城市轨道交通类</b>（城轨运营管理）—— 通常无严格身高门槛<br>
+    ④ <b>常规工科类</b>（机械、电子、计算机、电气等）—— 无身体条件限制
+  </div>
+  <p class="src">身体条件数据来源：广州民航职业技术学院2025年招生章程、广州铁路职业技术学院2025年招生章程。</p>
+</div>
+
+<!-- 深圳院校市内外区分 -->
+<div class="card">
+  <h2>深圳院校市内/市外户籍专业组区分</h2>
+  <p>深圳职业技术大学（11113）和深圳信息职业技术大学（12957）在专科批按<b>深圳市内户籍</b>和<b>市外户籍</b>分别设置专业组。你是深圳户籍，<b>只报市内组（分数线更低）</b>，已排除全部市外组：</p>
+  <table>
+    <tr><th>学校</th><th>市内户籍组（你可报）</th><th>市外户籍组（已排除）</th><th>排除项</th></tr>
+    <tr>
+      <td><b>深圳职业技术大学</b><br>(11113)</td>
+      <td><span class="tag t-sz">541-547</span></td>
+      <td>531-538</td>
+      <td>538中外合作（排除）、548中外合作（排除）</td>
+    </tr>
+    <tr>
+      <td><b>深圳信息职业技术大学</b><br>(12957)</td>
+      <td><span class="tag t-sz">501-507</span></td>
+      <td>508-514</td>
+      <td>533协同培养（排除）</td>
+    </tr>
+  </table>
+  <div class="infobox">
+    <b>市内户籍的优势：</b>深职大市内组547（小语种组）2025年投档线仅433分/排位280203，你444分稳超；深信大市内组503（集成电路/机械/工业机器人）435分/排位276625，你排位276167在其上458位，<b>几乎卡线稳进</b>——这是你方案中含金量最高的选项之一。
+  </div>
+  <p class="src">专业组区分来源：深圳职业技术大学招生信息网2025年录取数据、深圳信息职业技术大学2025年招生计划。</p>
+</div>
+
+<!-- ============ 第1步 ============ -->
+<div class="step-header"><span class="num">1</span>冲深圳本地顶级公办本科冷门专业（捡漏碰运气）</div>
+<div class="card">
+  <div class="warnbox"><b>现实说明：</b>深圳所有公办本科2025年最低投档排位在6万以内，比你高出<b>21万位以上</b>。你明确表示知道没机会但想碰运气，以下列出深圳公办本科中排位最低的专业组供你"捡漏"。</div>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>院校名称</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="c">差距</th><th>推荐冷门专业方向</th></tr>
+    <tr><td>1</td><td>12957</td><td>深圳信息职业技术大学（本科批）</td><td>201</td><td class="r">566</td><td class="r">60,409</td><td class="c"><span class="tag t-bad">差21.6万位</span></td><td>软件工程、计算机科学与技术、通信工程、微电子科学与工程（工科向，但排位极高）</td></tr>
+    <tr><td>2</td><td>11113</td><td>深圳职业技术大学（本科批）</td><td>203</td><td class="r">566</td><td class="r">59,726</td><td class="c"><span class="tag t-bad">差21.6万位</span></td><td>电子信息工程、机械设计制造及其自动化、汽车服务工程（工科向）</td></tr>
+    <tr><td>3</td><td>11113</td><td>深圳职业技术大学（本科批）</td><td>202</td><td class="r">572</td><td class="r">52,888</td><td class="c"><span class="tag t-bad">差22.3万位</span></td><td>材料科学与工程、食品科学与工程（相对冷门工科）</td></tr>
+    <tr><td>4</td><td>14655</td><td>深圳技术大学</td><td>201</td><td class="r">580</td><td class="r">44,470</td><td class="c"><span class="tag t-bad">差23.2万位</span></td><td>机械设计制造及其自动化、电子科学与技术、自动化（工科向）</td></tr>
+  </table>
+  <p class="small">填报建议：这4个志愿纯碰运气，放在本科批最前面占位即可。如果捡漏成功就是赚到，失败也完全在意料之中。建议只填1—2个最想去的，不必浪费太多志愿位。</p>
+</div>
+
+<!-- ============ 第2步 ============ -->
+<div class="step-header"><span class="num">2</span>深圳本地普通公办本科冷门专业</div>
+<div class="card">
+  <div class="keybox"><b>不存在对应院校。</b>深圳公办本科仅有7所（哈工大深圳、深圳理工、深圳大学、深职大本科批、深技大、深信大本科批、深北理莫斯科），全部排位在6万以内，没有"普通公办本科"这一档可降。第1步已涵盖深圳所有公办本科选项，本步无新增院校。</div>
+  <p class="small">如果你想在深圳读公办，唯一可行的路径是专科批的深职大市内组和深信大市内组（见第7步），那是深圳公办专科，分数线大幅低于本科批。</p>
+</div>
+
+<!-- ============ 第3步 ============ -->
+<div class="step-header"><span class="num">3</span>广东省公办本科较好学校（捡漏碰运气）</div>
+<div class="card">
+  <div class="warnbox"><b>现实说明：</b>广东公办本科2025年最低投档排位约17.5万/494分，比你高出<b>10万位/50分</b>。以下列出广东公办本科中排位最低的院校专业组供你"捡漏"，越往下越接近你的排位但仍不可达。</div>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>院校名称</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="c">差距</th><th>推荐冷门专业方向</th></tr>
+    <tr><td>5</td><td>10582</td><td>嘉应学院</td><td>216</td><td class="r">494</td><td class="r">175,550</td><td class="c"><span class="tag t-bad">差10万位</span></td><td>地理信息科学、环境工程、食品科学与工程（梅州，相对冷门）</td></tr>
+    <tr><td>6</td><td>10576</td><td>韶关学院</td><td>228</td><td class="r">494</td><td class="r">175,047</td><td class="c"><span class="tag t-bad">差10万位</span></td><td>园艺、动物科学、食品科学与工程（韶关，冷门农科工科）</td></tr>
+    <tr><td>7</td><td>10580</td><td>肇庆学院</td><td>222</td><td class="r">496</td><td class="r">172,887</td><td class="c"><span class="tag t-bad">差10万位</span></td><td>环境工程、材料化学、食品质量与安全（冷门工科）</td></tr>
+    <tr><td>8</td><td>10578</td><td>韩山师范学院</td><td>209</td><td class="r">497</td><td class="r">171,765</td><td class="c"><span class="tag t-bad">差10万位</span></td><td>食品科学与工程、无机非金属材料工程（潮州，冷门工科）</td></tr>
+    <tr><td>9</td><td>10579</td><td>岭南师范学院</td><td>210</td><td class="r">498</td><td class="r">170,527</td><td class="c"><span class="tag t-bad">差10.6万位</span></td><td>食品工程、海洋资源开发技术（湛江，冷门工科）</td></tr>
+    <tr><td>10</td><td>11656</td><td>广东石油化工学院</td><td>207</td><td class="r">500</td><td class="r">167,376</td><td class="c"><span class="tag t-bad">差10.9万位</span></td><td>环境工程、安全工程、高分子材料与工程（茂名，冷门工科）</td></tr>
+  </table>
+  <p class="small">填报建议：这些都是粤东西北地方公办本科，排位最低但仍差10万位。选2—3个填在本科批第2—5位碰运气，专业选最冷门的农/林/食品/环境类。</p>
+</div>
+
+<!-- ============ 第4步 ============ -->
+<div class="step-header"><span class="num">4</span>广东省扩招公办本科（捡漏碰运气）</div>
+<div class="card">
+  <div class="warnbox"><b>现实说明：</b>第3步列出的已是广东公办本科排位最低的院校，"扩招"最多让排位下移几千位，无法将17.5万拉到27.6万。本步与第3步院校重叠，建议从第3步中选1—2个最有可能扩招的（如广东石油化工学院、嘉应学院）重复填报不同专业组。</div>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>院校名称</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th>推荐冷门专业方向</th></tr>
+    <tr><td>11</td><td>11656</td><td>广东石油化工学院</td><td>206</td><td class="r">503</td><td class="r">163,324</td><td>资源勘查工程、油气储运工程（茂名，冷门工科，近年有扩招趋势）</td></tr>
+    <tr><td>12</td><td>10582</td><td>嘉应学院</td><td>217</td><td class="r">498</td><td class="r">170,402</td><td>数学与应用数学（师范）、物理学（师范）（梅州，师范类冷门）</td></tr>
+  </table>
+</div>
+
+<!-- ============ 第5步 ============ -->
+<div class="step-header"><span class="num">5</span>省外扩招公办本科热门/冷门专业（捡漏碰运气）</div>
+<div class="card">
+  <div class="warnbox"><b>现实说明：</b>省外公办本科在广东招生最低排位约18万/491分，比你高<b>9万位/47分</b>。以下列出省外公办本科中排位最低的院校，以西部偏远地区为主，是最有可能"捡漏"的公办本科（但概率仍然极低）。</div>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>院校名称</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="c">差距</th><th>推荐冷门专业方向</th></tr>
+    <tr><td>13</td><td>10746</td><td>青海师范大学</td><td>201</td><td class="r">492</td><td class="r">180,084</td><td class="c"><span class="tag t-bad">差9.6万位</span></td><td>地理科学、生物技术、计算机科学与技术（西宁，冷门工科）</td></tr>
+    <tr><td>14</td><td>10181</td><td>齐齐哈尔大学</td><td>202</td><td class="r">492</td><td class="r">180,167</td><td class="c"><span class="tag t-bad">差9.6万位</span></td><td>无机非金属材料工程、食品科学与工程（黑龙江，冷门工科）</td></tr>
+    <tr><td>15</td><td>10188</td><td>吉林建筑大学</td><td>201</td><td class="r">491</td><td class="r">180,250</td><td class="c"><span class="tag t-bad">差9.6万位</span></td><td>建筑学、土木工程、无机非金属材料工程（吉林，工科向）</td></tr>
+    <tr><td>16</td><td>10127</td><td>内蒙古科技大学</td><td>201</td><td class="r">491</td><td class="r">180,287</td><td class="c"><span class="tag t-bad">差9.6万位</span></td><td>冶金工程、采矿工程、矿物加工工程（包头，冷门工科）</td></tr>
+    <tr><td>17</td><td>10762</td><td>新疆师范大学</td><td>201</td><td class="r">491</td><td class="r">180,417</td><td class="c"><span class="tag t-bad">差9.6万位</span></td><td>生物技术、地理信息科学（乌鲁木齐，冷门）</td></tr>
+    <tr><td>18</td><td>10764</td><td>伊犁师范大学</td><td>201</td><td class="r">491</td><td class="r">181,098</td><td class="c"><span class="tag t-bad">差9.5万位</span></td><td>物理学（师范）、生物科学（新疆伊犁，最偏远公办之一）</td></tr>
+    <tr><td>19</td><td>10763</td><td>喀什大学</td><td>201</td><td class="r">491</td><td class="r">181,415</td><td class="c"><span class="tag t-bad">差9.5万位</span></td><td>计算机科学与技术、物理学（新疆喀什，最偏远公办之一）</td></tr>
+    <tr><td>20</td><td>10757</td><td>塔里木大学</td><td>201</td><td class="r">491</td><td class="r">181,500</td><td class="c"><span class="tag t-bad">差9.5万位</span></td><td>农业水利工程、园艺、动物科学（新疆阿拉尔，最偏远公办）</td></tr>
+    <tr><td>21</td><td>10202</td><td>白城师范学院</td><td>201</td><td class="r">491</td><td class="r">181,867</td><td class="c"><span class="tag t-bad">差9.4万位</span></td><td>物理学（师范）、化学（师范）（吉林白城，冷门师范）</td></tr>
+    <tr><td>22</td><td>10919</td><td>昌吉学院</td><td>201</td><td class="r">490</td><td class="r">182,159</td><td class="c"><span class="tag t-bad">差9.4万位</span></td><td>计算机科学与技术、化学（新疆昌吉，冷门工科）</td></tr>
+    <tr><td>23</td><td>10918</td><td>新疆和田学院</td><td>201</td><td class="r">490</td><td class="r">183,204</td><td class="c"><span class="tag t-bad">差9.3万位</span></td><td>小学教育（理科方向）、计算机应用技术（新疆和田，最偏远）</td></tr>
+    <tr><td>24</td><td>10927</td><td>新疆工程学院</td><td>201</td><td class="r">490</td><td class="r">183,118</td><td class="c"><span class="tag t-bad">差9.3万位</span></td><td>采矿工程、安全工程、机械电子工程（乌鲁木齐，工科向）</td></tr>
+  </table>
+  <p class="small">填报建议：选4—6个填在本科批第6—12位。这些是省外排位最低的公办本科，虽然仍差9万位，但捡漏概率相对最高。优先选新疆工程学院（工科向）、内蒙古科技大学（冶金/采矿）、吉林建筑大学（建筑/土木）。</p>
+</div>
+
+<!-- ============ 第6步 ============ -->
+<div class="step-header"><span class="num">6</span>省内民办本科热门专业组（本科主轴·按排名排序）</div>
+<div class="card">
+  <div class="goodbox"><b>这是你本科批的核心。</b>2025年广东民办本科普通批几乎全部以436分/排位约27.6万录取，你444分高出底线8分，<b>稳录概率极高</b>。以下按<b>广东省民办本科综合排名</b>（校友会2026 + 软科2026加权）从高到低排列，仅保留普通类（排除校企联合培养/协同培养/联合培养/中外合作等），并标注每所学校的可达性。</div>
+
+  <h3>广东省民办本科综合排名 & 可达性总览</h3>
+  <p class="small">综合排名来源：校友会（CUAA）2026广东省民办大学排名 + 软科（ShanghaiRanking）2026中国民办高校排名。两榜加权综合排序。</p>
+  <table>
+    <tr><th class="c">综合排名</th><th>院校名称</th><th class="c">校友会2026</th><th class="c">软科2026</th><th class="r">2025最低投档排位</th><th class="c">你的可达性</th></tr>
+    <tr><td class="c">1</td><td><b>珠海科技学院</b></td><td class="c">全国23 / 省6</td><td class="c">全国3 / 省1</td><td class="r">171,162</td><td class="c"><span class="tag t-bad">❌不可达 差10.5万位</span></td></tr>
+    <tr><td class="c">2</td><td><b>广州南方学院</b></td><td class="c">全国1 / 省1</td><td class="c">全国18 / 省3</td><td class="r">202,472</td><td class="c"><span class="tag t-bad">❌不可达 差7.4万位</span></td></tr>
+    <tr><td class="c">3</td><td><b>广州城市理工学院</b></td><td class="c">全国7 / 省2</td><td class="c">全国14 / 省2</td><td class="r">176,527</td><td class="c"><span class="tag t-bad">❌不可达 差10万位</span></td></tr>
+    <tr><td class="c">4</td><td><b>广东科技学院</b></td><td class="c">全国8 / 省3</td><td class="c">全国42 / 省6</td><td class="r">254,929</td><td class="c"><span class="tag t-chong">⚠冲 + ✅稳保</span></td></tr>
+    <tr><td class="c">5</td><td><b>广州商学院</b></td><td class="c">全国10 / 省4</td><td class="c">全国18 / 省3</td><td class="r">230,853</td><td class="c"><span class="tag t-bad">❌不可达 差4.5万位</span></td></tr>
+    <tr><td class="c">6</td><td><b>广州理工学院</b></td><td class="c">全国21 / 省5</td><td class="c">全国64 / 省10</td><td class="r">253,100</td><td class="c"><span class="tag t-chong">⚠冲</span></td></tr>
+    <tr><td class="c">7</td><td><b>广东白云学院</b></td><td class="c">全国50 / 省11</td><td class="c">全国39 / 省5</td><td class="r">206,914</td><td class="c"><span class="tag t-chong">⚠冲（部分组）</span></td></tr>
+    <tr><td class="c">8</td><td><b>广东培正学院</b></td><td class="c">全国32 / 省8</td><td class="c">全国59 / 省9</td><td class="r">237,799</td><td class="c"><span class="tag t-wen">✅稳保（部分组）</span></td></tr>
+    <tr><td class="c">9</td><td><b>广州软件学院</b></td><td class="c">全国72 / 省17</td><td class="c">全国51 / 省8</td><td class="r">210,005</td><td class="c"><span class="tag t-chong">⚠冲 + ✅稳保</span></td></tr>
+    <tr><td class="c">10</td><td><b>广州华商学院</b></td><td class="c">全国73 / 省18</td><td class="c">全国65 / 省11</td><td class="r">271,306</td><td class="c"><span class="tag t-chong">⚠冲 + ✅稳保</span></td></tr>
+    <tr><td class="c">11</td><td><b>华南农业大学珠江学院</b></td><td class="c">全国51 / 省12</td><td class="c">未进主榜</td><td class="r">202,640</td><td class="c"><span class="tag t-chong">⚠冲（部分组）</span></td></tr>
+    <tr><td class="c">12</td><td><b>广州新华学院</b></td><td class="c">全国55 / 省13</td><td class="c">全国45 / 省7</td><td class="r">194,795</td><td class="c"><span class="tag t-bad">❌不可达 差8.1万位</span></td></tr>
+    <tr><td class="c">13</td><td><b>东莞城市学院</b></td><td class="c">全国65 / 省14</td><td class="c">全国90 / 省16</td><td class="r">243,743</td><td class="c"><span class="tag t-chong">⚠冲 + ✅稳保</span></td></tr>
+    <tr><td class="c">14</td><td><b>广州工商学院</b></td><td class="c">全国69 / 省15</td><td class="c">全国72 / 省12</td><td class="r">274,784</td><td class="c"><span class="tag t-chong">⚠冲 + ✅稳保</span></td></tr>
+    <tr><td class="c">15</td><td><b>广州应用科技学院</b></td><td class="c">全国89 / 省21</td><td class="c">全国74 / 省14</td><td class="r">208,041</td><td class="c"><span class="tag t-chong">⚠冲 + ✅稳保</span></td></tr>
+    <tr><td class="c">16</td><td><b>湛江科技学院</b></td><td class="c">全国85 / 省20</td><td class="c">全国73 / 省13</td><td class="r">275,816</td><td class="c"><span class="tag t-wen">✅稳保</span></td></tr>
+    <tr><td class="c">17</td><td><b>广州华立学院</b></td><td class="c">全国47 / 省10</td><td class="c">全国100+ / 省17</td><td class="r">264,467</td><td class="c"><span class="tag t-chong">⚠冲 + ✅稳保</span></td></tr>
+    <tr><td class="c">18</td><td><b>广东理工学院</b></td><td class="c">全国99 / 省22</td><td class="c">全国100+ / 省18</td><td class="r">273,804</td><td class="c"><span class="tag t-chong">⚠冲 + ✅稳保</span></td></tr>
+    <tr><td class="c">19</td><td><b>广东工商职业技术大学</b><br><span class="small">（职业技术大学类）</span></td><td class="c">职技类全国12 / 省2</td><td class="c">—</td><td class="r">274,743</td><td class="c"><span class="tag t-chong">⚠冲 + ✅稳保</span></td></tr>
+    <tr><td class="c">20</td><td><b>广州科技职业技术大学</b><br><span class="small">（职业技术大学类）</span></td><td class="c">职技类全国67 / 省7</td><td class="c">—</td><td class="r">276,185</td><td class="c"><span class="tag t-wen">✅稳保</span></td></tr>
+  </table>
+  <div class="warnbox"><b>排名前三的珠海科技学院、广州南方学院、广州城市理工学院对你完全不可达</b>（差7—10万位）。排名前12中仅4所（广东科技学院、广州理工学院、广东培正学院、广州软件学院）有你可冲或稳保的专业组。以下按排名顺序列出你可填报的具体专业组。</div>
+
+  <h3>按排名顺序的可填报专业组（仅列出冲和稳保，排除不可达院校）</h3>
+
+  <h4>第4名 广东科技学院 <span class="tag t-eng">工科向</span></h4>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业方向</th></tr>
+    <tr><td>25</td><td>13719</td><td>206</td><td class="r">449</td><td class="r">254,929</td><td class="r">1303</td><td class="c"><span class="tag t-chong">冲</span></td><td>软件工程、汽车服务工程、机械电子工程、物联网工程</td></tr>
+    <tr><td>26</td><td>13719</td><td>211</td><td class="r">444</td><td class="r">263,887</td><td class="r">60</td><td class="c"><span class="tag t-chong">冲</span></td><td>软件工程、汽车服务工程、机械电子工程（计划少）</td></tr>
+    <tr><td>27</td><td>13719</td><td>207</td><td class="r">436</td><td class="r">276,393</td><td class="r">500</td><td class="c"><span class="tag t-wen">稳保</span></td><td>汽车服务工程、物联网工程、数据科学与大数据技术</td></tr>
+    <tr><td>28</td><td>13719</td><td>205</td><td class="r">436</td><td class="r">276,571</td><td class="r">1545</td><td class="c"><span class="tag t-bao">保</span></td><td>计算机科学与技术、软件工程、电子信息工程</td></tr>
+  </table>
+
+  <h4>第6名 广州理工学院 <span class="tag t-eng">工科向</span></h4>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业方向</th></tr>
+    <tr><td>29</td><td>12620</td><td>202</td><td class="r">450</td><td class="r">253,100</td><td class="r">640</td><td class="c"><span class="tag t-chong">冲</span></td><td>机械设计制造及其自动化、电气工程及其自动化、电子信息工程</td></tr>
+    <tr><td>30</td><td>12620</td><td>201</td><td class="r">446</td><td class="r">259,886</td><td class="r">3735</td><td class="c"><span class="tag t-chong">冲</span></td><td>计算机科学与技术、软件工程、土木工程（计划3735，名额多）</td></tr>
+  </table>
+
+  <h4>第7名 广东白云学院 <span class="tag t-eng">工科向</span></h4>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业方向</th></tr>
+    <tr><td>31</td><td>10822</td><td>206</td><td class="r">447</td><td class="r">257,936</td><td class="r">194</td><td class="c"><span class="tag t-chong">冲</span></td><td>机械设计制造及其自动化、自动化、机器人工程</td></tr>
+    <tr><td>32</td><td>10822</td><td>205</td><td class="r">444</td><td class="r">263,134</td><td class="r">136</td><td class="c"><span class="tag t-chong">冲</span></td><td>机械设计制造及其自动化、自动化、机器人工程</td></tr>
+  </table>
+
+  <h4>第8名 广东培正学院</h4>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业方向</th></tr>
+    <tr><td>33</td><td>12059</td><td>202</td><td class="r">436</td><td class="r">276,542</td><td class="r">683</td><td class="c"><span class="tag t-wen">稳保</span></td><td>计算机科学与技术、工商管理</td></tr>
+    <tr><td>34</td><td>12059</td><td>201</td><td class="r">436</td><td class="r">276,552</td><td class="r">1240</td><td class="c"><span class="tag t-bao">保</span></td><td>计算机科学与技术、数字媒体技术</td></tr>
+  </table>
+
+  <h4>第9名 广州软件学院 <span class="tag t-eng">工科向·推荐</span></h4>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业方向</th></tr>
+    <tr><td>35</td><td>12618</td><td>203</td><td class="r">447</td><td class="r">258,240</td><td class="r">632</td><td class="c"><span class="tag t-chong">冲</span></td><td><b>软件工程、网络工程、数字媒体技术</b>（工科向，推荐）</td></tr>
+    <tr><td>36</td><td>12618</td><td>204</td><td class="r">436</td><td class="r">276,031</td><td class="r">116</td><td class="c"><span class="tag t-wen">稳保</span></td><td>软件工程、网络工程（计划仅116，卡线稳）</td></tr>
+  </table>
+
+  <h4>第10名 广州华商学院</h4>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业方向</th></tr>
+    <tr><td>37</td><td>12621</td><td>213</td><td class="r">439</td><td class="r">271,306</td><td class="r">550</td><td class="c"><span class="tag t-chong">冲</span></td><td>会计学、国际经济与贸易（非工科，冲排名）</td></tr>
+    <tr><td>38</td><td>12621</td><td>214</td><td class="r">436</td><td class="r">276,373</td><td class="r">818</td><td class="c"><span class="tag t-wen">稳保</span></td><td>会计学、市场营销（保底用）</td></tr>
+  </table>
+
+  <h4>第11名 华南农业大学珠江学院</h4>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业方向</th></tr>
+    <tr><td>39</td><td>12623</td><td>204</td><td class="r">438</td><td class="r">273,131</td><td class="r">52</td><td class="c"><span class="tag t-chong">冲</span></td><td>计算机科学与技术、电子信息工程（计划仅52）</td></tr>
+  </table>
+
+  <h4>第13名 东莞城市学院 <span class="tag t-eng">工科向</span></h4>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业方向</th></tr>
+    <tr><td>40</td><td>13844</td><td>217</td><td class="r">445</td><td class="r">261,092</td><td class="r">315</td><td class="c"><span class="tag t-chong">冲</span></td><td>机械设计制造及其自动化、电子信息工程、土木工程</td></tr>
+    <tr><td>41</td><td>13844</td><td>218</td><td class="r">445</td><td class="r">261,312</td><td class="r">1128</td><td class="c"><span class="tag t-chong">冲</span></td><td>土木工程、工程管理、工程造价（计划1128）</td></tr>
+    <tr><td>42</td><td>13844</td><td>216</td><td class="r">436</td><td class="r">276,512</td><td class="r">165</td><td class="c"><span class="tag t-wen">稳保</span></td><td>机械设计制造及其自动化、电气工程</td></tr>
+  </table>
+
+  <h4>第14名 广州工商学院</h4>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业方向</th></tr>
+    <tr><td>43</td><td>13714</td><td>215</td><td class="r">437</td><td class="r">274,784</td><td class="r">96</td><td class="c"><span class="tag t-chong">冲</span></td><td>工商管理、会计学</td></tr>
+    <tr><td>44</td><td>13714</td><td>214</td><td class="r">436</td><td class="r">276,341</td><td class="r">290</td><td class="c"><span class="tag t-wen">稳保</span></td><td>工商管理、物流管理（保底用）</td></tr>
+  </table>
+
+  <h4>第15名 广州应用科技学院 <span class="tag t-eng">工科向</span></h4>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业方向</th></tr>
+    <tr><td>45</td><td>13657</td><td>214</td><td class="r">438</td><td class="r">272,247</td><td class="r">570</td><td class="c"><span class="tag t-chong">冲</span></td><td>计算机科学与技术、软件工程、数字媒体技术</td></tr>
+    <tr><td>46</td><td>13657</td><td>217</td><td class="r">436</td><td class="r">276,376</td><td class="r">70</td><td class="c"><span class="tag t-wen">稳保</span></td><td>计算机科学与技术、软件工程</td></tr>
+    <tr><td>47</td><td>13657</td><td>221</td><td class="r">436</td><td class="r">276,583</td><td class="r">220</td><td class="c"><span class="tag t-bao">保</span></td><td>计算机科学与技术、软件工程</td></tr>
+  </table>
+
+  <h4>第16名 湛江科技学院 <span class="tag t-eng">工科向</span></h4>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业方向</th></tr>
+    <tr><td>48</td><td>12622</td><td>203</td><td class="r">436</td><td class="r">275,816</td><td class="r">80</td><td class="c"><span class="tag t-chong">冲</span></td><td>机械设计制造及其自动化、电气工程（差351位，微冲）</td></tr>
+    <tr><td>49</td><td>12622</td><td>201</td><td class="r">436</td><td class="r">276,491</td><td class="r">2333</td><td class="c"><span class="tag t-wen">稳保</span></td><td>机械设计制造及其自动化、电气工程、计算机科学与技术</td></tr>
+    <tr><td>50</td><td>12622</td><td>202</td><td class="r">436</td><td class="r">276,574</td><td class="r">2965</td><td class="c"><span class="tag t-bao">保</span></td><td>电子信息工程、物联网工程、汽车服务工程</td></tr>
+  </table>
+
+  <h4>第17名 广州华立学院 <span class="tag t-eng">工科向</span></h4>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业方向</th></tr>
+    <tr><td>51</td><td>13656</td><td>201</td><td class="r">443</td><td class="r">264,467</td><td class="r">59</td><td class="c"><span class="tag t-chong">冲</span></td><td>电气工程及其自动化、计算机科学与技术</td></tr>
+    <tr><td>52</td><td>13656</td><td>204</td><td class="r">439</td><td class="r">270,732</td><td class="r">562</td><td class="c"><span class="tag t-chong">冲</span></td><td>土木工程、工程造价、建筑学</td></tr>
+    <tr><td>53</td><td>13656</td><td>205</td><td class="r">436</td><td class="r">276,575</td><td class="r">1084</td><td class="c"><span class="tag t-bao">保</span></td><td>土木工程、工程造价（工科向，保底）</td></tr>
+  </table>
+
+  <h4>第18名 广东理工学院 <span class="tag t-eng">工科向·推荐</span></h4>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业方向</th></tr>
+    <tr><td>54</td><td>13720</td><td>207</td><td class="r">437</td><td class="r">273,804</td><td class="r">60</td><td class="c"><span class="tag t-chong">冲</span></td><td>机械电子工程、车辆工程</td></tr>
+    <tr><td>55</td><td>13720</td><td>208</td><td class="r">436</td><td class="r">276,324</td><td class="r">180</td><td class="c"><span class="tag t-wen">稳保</span></td><td><b>机械电子工程、车辆工程、电气工程</b>（工科向，推荐）</td></tr>
+    <tr><td>56</td><td>13720</td><td>206</td><td class="r">436</td><td class="r">276,488</td><td class="r">2678</td><td class="c"><span class="tag t-wen">稳保</span></td><td>计算机科学与技术、软件工程、电子信息工程</td></tr>
+    <tr><td>57</td><td>13720</td><td>204</td><td class="r">436</td><td class="r">276,564</td><td class="r">1670</td><td class="c"><span class="tag t-bao">保</span></td><td>土木工程、工程管理、工程造价</td></tr>
+  </table>
+
+  <h4>第19名 广东工商职业技术大学 <span class="small">（职业技术大学类）</span> <span class="tag t-eng">工科向</span></h4>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业方向</th></tr>
+    <tr><td>58</td><td>13721</td><td>210</td><td class="r">437</td><td class="r">274,743</td><td class="r">50</td><td class="c"><span class="tag t-chong">冲</span></td><td>机械设计制造及其自动化、软件工程</td></tr>
+    <tr><td>59</td><td>13721</td><td>209</td><td class="r">436</td><td class="r">276,489</td><td class="r">371</td><td class="c"><span class="tag t-wen">稳保</span></td><td>机械设计制造及其自动化、软件工程</td></tr>
+    <tr><td>60</td><td>13721</td><td>201</td><td class="r">436</td><td class="r">276,580</td><td class="r">2015</td><td class="c"><span class="tag t-bao">保</span></td><td>机械设计制造及其自动化、大数据工程技术</td></tr>
+  </table>
+
+  <h4>第20名 广州科技职业技术大学 <span class="small">（职业技术大学类）</span> <span class="tag t-eng">工科向</span></h4>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业方向</th></tr>
+    <tr><td>61</td><td>13717</td><td>203</td><td class="r">436</td><td class="r">276,185</td><td class="r">2520</td><td class="c"><span class="tag t-wen">稳保</span></td><td><b>机械设计制造及其自动化、电气工程、计算机应用工程</b>（计划2520，名额最多）</td></tr>
+  </table>
+
+  <div class="infobox">
+    <b>本科批第6步小结：</b>按排名从第4名到第20名，共列出37个可填志愿（冲15 + 稳保14 + 保底8）。加上第1—5步捡漏约12个，本科批合计约49个，需精简至45个位。<br>
+    <b>重点推荐（兼顾排名 + 工科 + 可达性）：</b><br>
+    ① <b>广州软件学院</b>（排名第9，软件工程，冲203组+稳保204组）<br>
+    ② <b>广东科技学院</b>（排名第4，汽车/物联网/软件，冲206组+稳保207组）<br>
+    ③ <b>广东理工学院</b>（排名第18，机械/车辆/电气，稳保208组计划180）<br>
+    ④ <b>广州科技职业技术大学</b>（排名第20，机械/电气/计算机，稳保203组计划2520名额最多）<br>
+    ⑤ <b>湛江科技学院</b>（排名第16，机械/电气，稳保201组计划2333）
+  </div>
+  <p class="small">排名来源：校友会2026广东省民办大学排名（艾瑞深校友会网2026年1月发布）、软科2026中国民办高校排名。职业技术大学（广东工商职业技术大学、广州科技职业技术大学）属独立排名类别，不与普通民办本科直接比较。</p>
+</div>
+
+<!-- ============ 第7步 ============ -->
+<div class="step-header"><span class="num">7</span>公办专科志愿（含深圳院校市内组 + 铁路 + 民航 + 工科）</div>
+<div class="card">
+  <div class="goodbox"><b>这是你最强保障。</b>你排位276167在专科批属中上游，可覆盖大量公办专科工科/铁路/民航专业。以下全部为普通类、公办、学费正常（约6000元/年）的院校专业组。深圳院校仅保留<b>市内户籍组</b>。</div>
+
+  <h3>7-A｜深圳职业技术大学（11113）市内户籍组 <span class="tag t-sz">深圳公办</span></h3>
+  <table>
+    <tr><th>#</th><th>专业组</th><th>组别方向</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业（组内）</th></tr>
+    <tr><td>44</td><td>541</td><td>电子信息组</td><td class="r">480</td><td class="r">201,172</td><td class="r">226</td><td class="c"><span class="tag t-chong">冲</span></td><td>电子信息工程技术、物联网应用技术、智能产品开发</td></tr>
+    <tr><td>45</td><td>542</td><td>工科综合组</td><td class="r">469</td><td class="r">221,029</td><td class="r">187</td><td class="c"><span class="tag t-chong">冲</span></td><td>机械设计与制造、电气自动化技术、汽车电子技术</td></tr>
+    <tr><td>46</td><td>544</td><td>化工生物组</td><td class="r">457</td><td class="r">240,833</td><td class="r">49</td><td class="c"><span class="tag t-chong">冲</span></td><td>精细化工技术、材料工程技术、食品检验检测技术</td></tr>
+    <tr><td>47</td><td>545</td><td>医学护理组</td><td class="r">457</td><td class="r">240,751</td><td class="r">64</td><td class="c"><span class="tag t-chong">冲</span></td><td>护理、药学、口腔医学技术（非工科但深圳就业好）</td></tr>
+    <tr><td>48</td><td>543</td><td>文科综合组</td><td class="r">445</td><td class="r">261,583</td><td class="r">140</td><td class="c"><span class="tag t-chong">冲</span></td><td>商务管理、法律事务（非工科，冲深圳公办用）</td></tr>
+    <tr><td>49</td><td>546</td><td>传播设计组</td><td class="r">443</td><td class="r">264,095</td><td class="r">62</td><td class="c"><span class="tag t-chong">冲</span></td><td>传播与策划、数字出版（非工科，冲深圳公办用）</td></tr>
+    <tr><td>50</td><td>547</td><td>小语种组</td><td class="r">433</td><td class="r">280,203</td><td class="r">30</td><td class="c"><span class="tag t-wen">稳保</span></td><td>商务日语、商务英语（非工科，但深圳公办稳进）</td></tr>
+  </table>
+  <p class="small">深职大市内组547（433分）你444分稳超11分，是<b>深圳公办专科的稳保底线</b>。541/542工科组排位较高需冲，但一旦冲上就是深圳最好的工科专科。</p>
+
+  <h3>7-B｜深圳信息职业技术大学（12957）市内户籍组 <span class="tag t-sz">深圳公办·重点推荐</span></h3>
+  <table>
+    <tr><th>#</th><th>专业组</th><th>组别方向</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业（组内）</th></tr>
+    <tr><td>51</td><td>501</td><td>软件技术组</td><td class="r">458</td><td class="r">240,563</td><td class="r">150</td><td class="c"><span class="tag t-chong">冲</span></td><td>软件技术、计算机应用技术、大数据技术、人工智能技术应用</td></tr>
+    <tr><td>52</td><td>506</td><td>广播影视组</td><td class="r">453</td><td class="r">247,490</td><td class="r">7</td><td class="c"><span class="tag t-chong">冲</span></td><td>广播影视节目制作（计划仅7，竞争大）</td></tr>
+    <tr><td>53</td><td>502</td><td>移动通信组</td><td class="r">438</td><td class="r">273,485</td><td class="r">146</td><td class="c"><span class="tag t-chong">冲</span></td><td>现代移动通信技术、物联网应用技术、云计算技术应用、汽车智能技术</td></tr>
+    <tr><td>54</td><td>507</td><td>学前教育组</td><td class="r">437</td><td class="r">273,677</td><td class="r">4</td><td class="c"><span class="tag t-chong">冲</span></td><td>学前教育（计划仅4，非工科）</td></tr>
+    <tr><td style="background:#fffbeb;font-weight:700;">55</td><td style="background:#fffbeb;font-weight:700;">503</td><td style="background:#fffbeb;font-weight:700;">集成电路/机械/机器人组 <span class="star">★</span></td><td class="r" style="background:#fffbeb;font-weight:700;">435</td><td class="r" style="background:#fffbeb;font-weight:700;">276,625</td><td class="r" style="background:#fffbeb;font-weight:700;">244</td><td class="c" style="background:#fffbeb;"><span class="tag t-wen">稳</span></td><td style="background:#fffbeb;"><b>集成电路技术、机械设计与制造、智能控制技术、工业机器人技术、工业互联网技术、无人机应用技术、智能机器人技术、智能建造技术</b></td></tr>
+    <tr><td style="background:#fffbeb;font-weight:700;">56</td><td style="background:#fffbeb;font-weight:700;">505</td><td style="background:#fffbeb;font-weight:700;">城市轨道交通组 <span class="star">★</span></td><td class="r" style="background:#fffbeb;font-weight:700;">433</td><td class="r" style="background:#fffbeb;font-weight:700;">279,589</td><td class="r" style="background:#fffbeb;font-weight:700;">34</td><td class="c" style="background:#fffbeb;"><span class="tag t-wen">稳保</span></td><td style="background:#fffbeb;"><b>城市轨道交通运营管理</b>（深圳地铁对口，你的身高达标）、环境工程技术</td></tr>
+    <tr><td>57</td><td>504</td><td>电子商务组</td><td class="r">428</td><td class="r">287,952</td><td class="r">128</td><td class="c"><span class="tag t-bao">保</span></td><td>电子商务、现代物流管理、大数据与会计（非工科，保底用）</td></tr>
+  </table>
+  <div class="goodbox">
+    <b><span class="star">★</span> 重点推荐：深信大503组和505组</b><br>
+    <b>503组</b>（集成电路/机械/工业机器人等）：2025排位276625，你排位276167在其上仅458位，<b>几乎卡线稳进</b>。计划244人，名额充足。含集成电路技术、机械设计与制造、工业机器人技术、无人机应用技术等纯工科专业，完全对口你的意向。<br>
+    <b>505组</b>（城市轨道交通运营管理）：排位279589，你在其上3422位，稳保。城轨专业对口深圳地铁就业，你的身高1.69m通常达标（多数院校城轨要求≥168cm）。
+  </div>
+
+  <h3>7-C｜铁路院校 普通类 <span class="tag t-rail">铁路向</span></h3>
+  <p class="small">以下铁路院校专业经身体条件筛选：✅标注为你可以报的专业方向（身高≥168cm达标、视力≥4.6达标），❌为不建议（身高或视力不达标）。</p>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>院校名称</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业 & 身体匹配</th></tr>
+    <tr><td>58</td><td>13943</td><td>广州铁路职业技术学院</td><td>504</td><td class="r">470</td><td class="r">218,186</td><td class="r">353</td><td class="c"><span class="tag t-chong">冲</span></td><td>✅铁道工程技术（≥168cm达标）、✅铁道机车检修方向（≥168cm/≥4.6达标）、❌铁道交通运营管理（<172慎报）</td></tr>
+    <tr><td>59</td><td>13943</td><td>广州铁路职业技术学院</td><td>503</td><td class="r">460</td><td class="r">236,335</td><td class="r">548</td><td class="c"><span class="tag t-chong">冲</span></td><td>✅铁道工程技术、✅铁道机车检修方向、✅城市轨道交通工程（多数无严格身高）</td></tr>
+    <tr><td>60</td><td>13943</td><td>广州铁路职业技术学院</td><td>506</td><td class="r">438</td><td class="r">272,502</td><td class="r">29</td><td class="c"><span class="tag t-chong">冲</span></td><td>计划仅29，差约3600位，冲一冲</td></tr>
+    <tr><td>61</td><td>12302</td><td>湖南铁道职业技术学院</td><td>515</td><td class="r">455</td><td class="r">244,693</td><td class="r">67</td><td class="c"><span class="tag t-chong">冲</span></td><td>✅铁道机车检修方向、✅铁道车辆、✅铁道工程技术（株洲，铁路强校）</td></tr>
+    <tr><td>62</td><td>12977</td><td>武汉铁路职业技术学院</td><td>510</td><td class="r">437</td><td class="r">273,655</td><td class="r">16</td><td class="c"><span class="tag t-chong">冲</span></td><td>✅铁道工程技术、✅铁道机车检修方向（差约2500位，计划仅16）</td></tr>
+    <tr><td>63</td><td>13945</td><td>西安铁路职业技术学院</td><td>504</td><td class="r">437</td><td class="r">274,259</td><td class="r">5</td><td class="c"><span class="tag t-chong">冲</span></td><td>✅铁道工程技术、✅铁道机车检修方向（差约1900位，计划仅5）</td></tr>
+    <tr><td>64</td><td>13941</td><td>湖南高速铁路职业技术学院</td><td>508</td><td class="r">456</td><td class="r">242,646</td><td class="r">66</td><td class="c"><span class="tag t-chong">冲</span></td><td>✅铁道工程技术、✅铁道交通工程（高铁建设方向，衡阳）</td></tr>
+    <tr><td>65</td><td>12392</td><td>柳州铁道职业技术学院</td><td>504</td><td class="r">443</td><td class="r">265,444</td><td class="r">68</td><td class="c"><span class="tag t-chong">冲</span></td><td>✅铁道工程技术、✅铁道机车检修方向（差约1万位）</td></tr>
+    <tr><td>66</td><td>12424</td><td>石家庄铁路职业技术学院</td><td>504</td><td class="r">431</td><td class="r">283,775</td><td class="r">6</td><td class="c"><span class="tag t-wen">稳保</span></td><td>✅铁道工程技术、✅铁道工程（≥168cm达标）（石家庄，计划仅6）</td></tr>
+    <tr><td>67</td><td>12977</td><td>武汉铁路职业技术学院</td><td>515</td><td class="r">428</td><td class="r">287,972</td><td class="r">2</td><td class="c"><span class="tag t-bao">保</span></td><td>✅铁道工程技术（计划仅2，保底用）</td></tr>
+    <tr><td>68</td><td>14006</td><td>四川铁道职业学院</td><td>502</td><td class="r">426</td><td class="r">290,943</td><td class="r">30</td><td class="c"><span class="tag t-bao">保</span></td><td>✅铁道工程技术、✅铁道机车检修方向（成都，计划30）</td></tr>
+    <tr><td>69</td><td>13566</td><td>陕西铁路工程职业技术学院</td><td>504</td><td class="r">419</td><td class="r">300,272</td><td class="r">3</td><td class="c"><span class="tag t-bao">保</span></td><td>✅铁道工程技术、✅高速铁道工程（渭南，计划仅3）</td></tr>
+    <tr><td>70</td><td>12907</td><td>哈尔滨铁道职业技术学院</td><td>506</td><td class="r">416</td><td class="r">304,914</td><td class="r">16</td><td class="c"><span class="tag t-bao">保</span></td><td>✅铁道工程技术、✅铁道机车检修方向（哈尔滨，保底）</td></tr>
+    <tr><td>71</td><td>13863</td><td>天津铁道职业技术学院</td><td>504</td><td class="r">403</td><td class="r">320,931</td><td class="r">24</td><td class="c"><span class="tag t-bao">保</span></td><td>✅铁道工程技术、✅铁道机车检修方向（天津，最后保底）</td></tr>
+  </table>
+
+  <h3>7-D｜民航院校 普通类 <span class="tag t-air">民航向</span></h3>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>院校名称</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业 & 身体匹配</th></tr>
+    <tr><td>72</td><td>12040</td><td>广州民航职业技术学院</td><td>511</td><td class="r">458</td><td class="r">239,066</td><td class="r">224</td><td class="c"><span class="tag t-chong">冲</span></td><td><b>✅飞机机电设备维修</b>（无身高限制！仅无色盲）、✅飞机结构修理、✅飞机电子设备维修</td></tr>
+    <tr><td>73</td><td>12040</td><td>广州民航职业技术学院</td><td>507</td><td class="r">470</td><td class="r">218,205</td><td class="r">169</td><td class="c"><span class="tag t-chong">冲</span></td><td>✅飞机机电设备维修、✅通用航空器维修（排位较高，冲）</td></tr>
+    <tr><td>74</td><td>12040</td><td>广州民航职业技术学院</td><td>510</td><td class="r">465</td><td class="r">228,008</td><td class="r">25</td><td class="c"><span class="tag t-chong">冲</span></td><td>✅飞机部件修理、✅航空发动机维修（计划仅25）</td></tr>
+    <tr><td>75</td><td>12055</td><td>长沙航空职业技术学院</td><td>505</td><td class="r">459</td><td class="r">238,349</td><td class="r">33</td><td class="c"><span class="tag t-chong">冲</span></td><td>✅飞机维修、✅航空发动机维修（长沙，军队背景）</td></tr>
+    <tr><td>76</td><td>12064</td><td>成都航空职业技术大学</td><td>504</td><td class="r">458</td><td class="r">239,062</td><td class="r">54</td><td class="c"><span class="tag t-chong">冲</span></td><td>✅飞机机电设备维修、✅航空材料精密成型（成都，航空强校）</td></tr>
+    <tr><td>77</td><td>12828</td><td>西安航空职业技术学院</td><td>504</td><td class="r">454</td><td class="r">246,924</td><td class="r">8</td><td class="c"><span class="tag t-chong">冲</span></td><td>✅飞机机电设备维修、✅航空发动机维修（西安，计划仅8）</td></tr>
+    <tr><td>78</td><td>12849</td><td>张家界航空工业职业技术学院</td><td>504</td><td class="r">426</td><td class="r">290,430</td><td class="r">11</td><td class="c"><span class="tag t-bao">保</span></td><td>✅飞机机电设备维修、✅航空发动机装配（张家界，保底）</td></tr>
+    <tr><td>79</td><td>14568</td><td>江苏航空职业技术学院</td><td>504</td><td class="r">425</td><td class="r">291,603</td><td class="r">10</td><td class="c"><span class="tag t-bao">保</span></td><td>✅飞机机电设备维修、✅无人机应用技术（镇江，保底）</td></tr>
+  </table>
+  <div class="infobox">
+    <b><span class="star">★</span> 民航类重点推荐：广州民航职业技术学院 511组（飞机机电设备维修）</b><br>
+    排位239066，你差约3.7万位需冲，但<b>飞机维修专业对你无身高限制</b>（仅要求无色盲），是所有铁路/民航专业中你身体条件最匹配的方向。该校在广州花都，就业对口南方航空、白云机场等。<br>
+    如果冲不上511组，广州民航506组（427分/288706排位）是你的<b>稳保民航选项</b>。
+  </div>
+
+  <h3>7-E｜其他广东公办专科 工科向 <span class="tag t-eng">工科向</span></h3>
+  <table>
+    <tr><th>#</th><th>院校代码</th><th>院校名称</th><th>专业组</th><th class="r">2025分</th><th class="r">2025排位</th><th class="r">计划</th><th class="c">定位</th><th>推荐专业方向</th></tr>
+    <tr><td>80</td><td>10833</td><td>广东轻工职业技术大学</td><td>510</td><td class="r">462</td><td class="r">233,619</td><td class="r">81</td><td class="c"><span class="tag t-chong">冲</span></td><td>精细化工技术、高分子材料加工技术、软件技术</td></tr>
+    <tr><td>81</td><td>10833</td><td>广东轻工职业技术大学</td><td>506</td><td class="r">461</td><td class="r">235,399</td><td class="r">721</td><td class="c"><span class="tag t-chong">冲</span></td><td>机械设计与制造、电气自动化技术、计算机应用技术</td></tr>
+    <tr><td>82</td><td>12953</td><td>广东邮电职业技术学院</td><td>509</td><td class="r">459</td><td class="r">238,177</td><td class="r">20</td><td class="c"><span class="tag t-chong">冲</span></td><td>现代移动通信技术、通信工程设计与监理（计划仅20）</td></tr>
+    <tr><td>83</td><td>10833</td><td>广东轻工职业技术大学</td><td>503</td><td class="r">456</td><td class="r">242,724</td><td class="r">653</td><td class="c"><span class="tag t-chong">冲</span></td><td>机电一体化技术、工业机器人技术、汽车检测与维修</td></tr>
+    <tr><td>84</td><td>12572</td><td>广东科学技术职业学院</td><td>510</td><td class="r">450</td><td class="r">252,446</td><td class="r">548</td><td class="c"><span class="tag t-chong">冲</span></td><td>软件技术、计算机应用技术、机电一体化</td></tr>
+    <tr><td>85</td><td>12327</td><td>佛山职业技术学院</td><td>501</td><td class="r">450</td><td class="r">253,767</td><td class="r">420</td><td class="c"><span class="tag t-chong">冲</span></td><td>机械设计与制造、电气自动化技术、工业机器人</td></tr>
+    <tr><td>86</td><td>10862</td><td>广东水利电力职业技术学院</td><td>505</td><td class="r">446</td><td class="r">260,494</td><td class="r">112</td><td class="c"><span class="tag t-chong">冲</span></td><td>水利水电工程、电气自动化技术、发电厂及电力系统</td></tr>
+    <tr><td>87</td><td>13919</td><td>广东理工职业学院</td><td>506</td><td class="r">432</td><td class="r">281,354</td><td class="r">22</td><td class="c"><span class="tag t-wen">稳保</span></td><td>工业机器人技术、机电一体化、软件技术</td></tr>
+    <tr><td>88</td><td>14263</td><td>东莞职业技术学院</td><td>514</td><td class="r">431</td><td class="r">282,656</td><td class="r">496</td><td class="c"><span class="tag t-wen">稳保</span></td><td>机械制造与自动化、电气自动化、电子信息工程</td></tr>
+    <tr><td>89</td><td>12327</td><td>佛山职业技术学院</td><td>503</td><td class="r">431</td><td class="r">283,382</td><td class="r">153</td><td class="c"><span class="tag t-wen">稳保</span></td><td>汽车检测与维修、智能控制技术、工业互联网</td></tr>
+    <tr><td>90</td><td>10862</td><td>广东水利电力职业技术学院</td><td>504</td><td class="r">431</td><td class="r">283,700</td><td class="r">186</td><td class="c"><span class="tag t-wen">稳保</span></td><td>建筑工程技术、工程造价、水利工程</td></tr>
+    <tr><td>91</td><td>12959</td><td>广东工贸职业技术学院</td><td>501</td><td class="r">428</td><td class="r">286,955</td><td class="r">1994</td><td class="c"><span class="tag t-wen">稳保</span></td><td>机电一体化、模具设计与制造、汽车电子（计划1994，名额多）</td></tr>
+    <tr><td>92</td><td>10861</td><td>广东交通职业技术学院</td><td>508</td><td class="r">426</td><td class="r">290,483</td><td class="r">1244</td><td class="c"><span class="tag t-bao">保</span></td><td>道路桥梁工程技术、汽车检测与维修、航海技术</td></tr>
+    <tr><td>93</td><td>12743</td><td>广东机电职业技术学院</td><td>502</td><td class="r">424</td><td class="r">293,908</td><td class="r">903</td><td class="c"><span class="tag t-bao">保</span></td><td>机电一体化、工业机器人、数控技术、汽车制造</td></tr>
+    <tr><td>94</td><td>13709</td><td>广州工程技术职业学院</td><td>506</td><td class="r">411</td><td class="r">310,959</td><td class="r">304</td><td class="c"><span class="tag t-bao">保</span></td><td>机电一体化、石油化工技术、餐饮智能管理</td></tr>
+    <tr><td>95</td><td>12736</td><td>广东职业技术学院</td><td>503</td><td class="r">398</td><td class="r">326,624</td><td class="r">1236</td><td class="c"><span class="tag t-bao">保</span></td><td>现代纺织技术、染整技术、机电一体化（最后保底）</td></tr>
+  </table>
+</div>
+
+<!-- 志愿汇总 -->
+<div class="card">
+  <h2>志愿填报总览</h2>
+  <table>
+    <tr><th>批次</th><th>步骤</th><th>定位</th><th class="r">志愿数</th><th>核心目标</th></tr>
+    <tr><td rowspan="5">本科批<br>(约49个→精简至45)</td><td>第1步</td><td>捡漏深圳公办本科</td><td class="r">2</td><td>深职大/深信大本科批（碰运气）</td></tr>
+    <tr><td>第3-4步</td><td>捡漏广东公办本科</td><td class="r">4</td><td>嘉应学院/韶关学院/广石化等（碰运气）</td></tr>
+    <tr><td>第5步</td><td>捡漏省外公办本科</td><td class="r">6</td><td>新疆工程学院/内蒙古科技大学等</td></tr>
+    <tr><td>第6步冲</td><td>民办本科冲（按排名）</td><td class="r">15</td><td>广东科技学院/广州理工学院/广州软件学院等</td></tr>
+    <tr><td>第6步稳保+保底</td><td>民办本科稳保保底（按排名）</td><td class="r">22</td><td>广东理工/湛江科技/广科大/广东培正等</td></tr>
+    <tr><td rowspan="6">专科批<br>(约52个)</td><td>7-A</td><td>深职大市内组</td><td class="r">7</td><td>541-547（547稳保）</td></tr>
+    <tr><td>7-B</td><td><b>深信大市内组</b></td><td class="r">7</td><td><b>503★稳 / 505★稳保 / 504保</b></td></tr>
+    <tr><td>7-C</td><td>铁路院校</td><td class="r">14</td><td>广铁/湖南铁道/石家庄铁路等</td></tr>
+    <tr><td>7-D</td><td>民航院校</td><td class="r">8</td><td><b>广州民航511★冲飞机维修</b> / 506稳保</td></tr>
+    <tr><td>7-E</td><td>其他公办工科专科</td><td class="r">16</td><td>广东轻工/广东工贸/广东机电等</td></tr>
+    <tr><td colspan="2">合计</td><td class="r">52</td><td>专科批45个位需精简（保留最心仪的45个）</td></tr>
+  </table>
+
+  <div class="goodbox">
+    <b>你最可能去的三所学校（按概率排序）：</b><br>
+    ① <b>深圳信息职业技术大学 503组</b>（集成电路/机械/工业机器人）—— 排位276625，你稳进，深圳公办，工科对口，计划244人<br>
+    ② <b>广东理工学院 208组</b>（机械/车辆/电气，民办排名第18）—— 民办本科排位276324，你稳超，计划180人<br>
+    ③ <b>深圳信息职业技术大学 505组</b>（城市轨道交通运营管理）—— 排位279589，稳保，深圳公办，城轨对口深圳地铁
+  </div>
+</div>
+
+<!-- 操作要点 -->
+<div class="card">
+  <h2>操作要点</h2>
+  <ul>
+    <li><b>专业组内具体专业需查2026《招生专业目录》：</b>本报告标注的"推荐专业方向"为基于院校特色和2025年组别的推断，2026年具体开设专业以纸质目录为准。填报时打开目录找到对应专业组代码，查看组内所有专业，按喜好排序。</li>
+    <li><b>深圳院校只填市内组：</b>深职大只填541-547，深信大只填501-507。切勿填531-538/508-514（市外组），那些分数线更高且你作为深圳户籍不应占用。</li>
+    <li><b>身体条件确认：</b>铁道机车检修方向（裸眼≥4.6）你的左眼4.6刚好卡线，填报前务必拨打院校招生办电话确认2026年是否仍执行此标准。飞机维修类（仅要求无色盲）你最稳。</li>
+    <li><b>本科批与专科批互斥：</b>一旦本科批被民办本科录取，专科志愿全部作废。若你坚定要读公办专科（深信大503/广州民航511等），本科批可只填捡漏志愿、不填民办本科保底，主动落入专科批。</li>
+    <li><b>志愿梯度：</b>本科批冲12+稳保13+捡漏6=约31个；专科批冲25+稳保15+保底5=约45个（需精简至45个位）。</li>
+    <li><b>"协同培养/联合培养"已全部排除：</b>按你的要求，所有含"协同培养""联合培养""校企联合培养""中外合作"的专业组均已从方案中移除。</li>
+  </ul>
+</div>
+
+<!-- 免责 -->
+<div class="card">
+  <h2>数据来源</h2>
+  <p class="src">
+  本报告全部院校投档分数与排位数据，均来自<b>广东省教育考试院（eea.gd.gov.cn）</b>公开发布的：<br>
+  ①《广东省2025年本科普通类（物理）投档情况》—— 解析2934条普通类专业组记录（已排除中外合作/协同培养/联合培养/校企/少数民族/预科等）<br>
+  ②《广东省2025年专科普通类（物理）投档情况》—— 解析1090条普通类专业组记录<br>
+  深圳院校市内/市外户籍专业组区分来源：深圳职业技术大学招生信息网、深圳信息职业技术大学2025年招生计划。<br>
+  身体条件要求来源：广州民航职业技术学院2025年招生章程、广州铁路职业技术学院2025年招生章程。<br>
+  报告基于2025年实际投档数据作为就近参考。2026年招生计划、分数、排位会有变化，最终以2026年《广东省普通高等学校招生专业目录》及录取实际为准。
+  </p>
+</div>
+
+</div>
+</body>
+</html>
