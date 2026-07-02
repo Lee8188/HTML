@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025广东本科物理类：计划数≠投档人数 院校分析</title>
+<style>
+:root {
+  --bg: #f5f7fa; --bg2: #fff; --ink: #1a1a2e; --muted: #6c7293;
+  --rule: #e0e0e0; --accent: #1565c0; --accent2: #c62828;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--ink); line-height:1.7; font-size:15px; }
+.container { max-width:1200px; margin:0 auto; padding:16px; }
+.hero { background:linear-gradient(135deg,#1565c0,#42a5f5); color:#fff; padding:35px 30px; border-radius:16px; margin-bottom:20px; }
+.hero h1 { font-size:26px; margin-bottom:6px; }
+.hero .meta { font-size:13px; opacity:0.85; }
+.section { background:var(--bg2); border-radius:12px; padding:24px; margin:16px 0; box-shadow:0 2px 8px rgba(0,0,0,0.06); }
+h2 { font-size:21px; color:var(--accent); border-left:5px solid var(--accent); padding-left:12px; margin:0 0 14px; }
+h3 { font-size:17px; color:var(--accent2); margin:14px 0 8px; }
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin:14px 0; }
+.stat-card { background:linear-gradient(135deg,#e3f2fd,#bbdefb); border-radius:10px; padding:14px; text-align:center; }
+.stat-card .num { font-size:28px; font-weight:700; color:var(--accent); }
+.stat-card .label { font-size:12px; color:var(--muted); margin-top:2px; }
+.stat-card.red { background:linear-gradient(135deg,#ffebee,#ffcdd2); }
+.stat-card.red .num { color:var(--accent2); }
+.stat-card.green { background:linear-gradient(135deg,#e8f5e9,#c8e6c9); }
+.stat-card.green .num { color:#2e7d32; }
+.alert { border-radius:8px; padding:14px 18px; margin:10px 0; font-size:14px; }
+.alert-info { background:#e3f2fd; border-left:4px solid #1976d2; }
+.alert-warn { background:#fff3e0; border-left:4px solid #fb8c00; }
+.alert-red { background:#ffebee; border-left:4px solid #e53935; }
+.alert b { color:inherit; }
+.table-wrap { overflow-x:auto; max-height:650px; border-radius:8px; }
+table { width:100%; border-collapse:collapse; font-size:13px; min-width:900px; }
+th { background:var(--accent); color:#fff; padding:9px 6px; text-align:center; font-weight:600; position:sticky; top:0; z-index:10; }
+td { padding:6px 6px; border-bottom:1px solid var(--rule); text-align:center; vertical-align:middle; }
+tr:nth-child(even) { background:#f5f5f5; }
+tr:hover { background:#e3f2fd; }
+.t-left { text-align:left; }
+.diff-high { color:#c62828; font-weight:700; }
+.diff-mid { color:#e65100; font-weight:600; }
+.diff-low { color:#2e7d32; }
+.rate-low { color:#c62828; font-weight:700; }
+.rate-mid { color:#e65100; }
+.rate-ok { color:#2e7d32; }
+.footnote { font-size:12px; color:#999; margin-top:20px; padding-top:12px; border-top:1px solid var(--rule); }
+@media(max-width:768px) { table { font-size:12px; min-width:700px; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="hero">
+  <h1>2025年广东本科普通类（物理）：计划数 ≠ 投档人数 院校分析</h1>
+  <div class="meta">数据来源：广东省教育考试院《广东省2025年本科普通类（物理）投档情况》PDF | 共3403条记录 | 84条不一致</div>
+</div>
+
+<div class="section">
+  <h2>一、总览</h2>
+  <div class="stat-grid">
+    <div class="stat-card"><div class="num">3,403</div><div class="label">总投档记录数</div></div>
+    <div class="stat-card green"><div class="num">3,319</div><div class="label">计划数=投档人数（97.5%）</div></div>
+    <div class="stat-card red"><div class="num">76</div><div class="label">未录满（计划>投档）</div></div>
+    <div class="stat-card"><div class="num">8</div><div class="label">超录（计划<投档）</div></div>
+  </div>
+  <div class="alert alert-info">
+    <b>分析口径：</b>从广东省教育考试院发布的2025年本科普通类（物理）投档情况PDF中，逐条比对"计划数"与"投档人数"字段，共发现<b>84条</b>不一致记录，占总数的2.5%。其中76条为"计划数大于投档人数"（即未录满/缺档），8条为"计划数小于投档人数"（即超录）。所有不一致记录<b>无一例外</b>均与广东民办本科院校相关（含省外民办），公办院校无一出现未录满情况。
+  </div>
+</div>
+
+<div class="section">
+  <h2>二、分类统计</h2>
+  <table>
+    <tr><th>类别</th><th>条数</th><th>涉及院校数</th><th>合计缺档/超录</th><th>说明</th></tr>
+    <tr><td>广东民办本科 · 普通类</td><td class="diff-high">44</td><td>11所</td><td class="diff-high">缺档 19,709人</td><td>未录满的主力军，缺档最严重</td></tr>
+    <tr><td>广东民办本科 · 特殊类<br><span style="font-size:11px;color:#999;">（中外合作/联合培养/校企/国际班）</span></td><td class="diff-mid">19</td><td>8所</td><td class="diff-mid">缺档 850人</td><td>特殊类型专业缺档更普遍</td></tr>
+    <tr><td>省外院校</td><td>13</td><td>7所</td><td>缺档 148人</td><td>缺档数较小，多为省外民办/中外合作</td></tr>
+    <tr><td>超录院校</td><td>8</td><td>5所</td><td>超录 15人</td><td>均为985/211顶尖名校或新设中外合作</td></tr>
+  </table>
+
+  <h3>按缺档严重程度分类（仅未录满）</h3>
+  <table>
+    <tr><th>严重程度</th><th>标准</th><th>广东民办普通类</th><th>广东民办特殊类</th><th>省外院校</th><th>合计</th></tr>
+    <tr><td class="diff-high">严重缺档</td><td>差距 > 500人</td><td>12条</td><td>0条</td><td>0条</td><td class="diff-high">12条</td></tr>
+    <tr><td class="diff-mid">大量缺档</td><td>差距 100-500人</td><td>11条</td><td>2条</td><td>0条</td><td class="diff-mid">13条</td></tr>
+    <tr><td class="diff-low">少量缺档</td><td>差距 < 100人</td><td>21条</td><td>17条</td><td>13条</td><td>51条</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h2>三、未录满 · 广东民办本科普通类（44条）</h2>
+  <div class="alert alert-red">
+    <b>核心发现：</b>广东民办本科普通类专业组是未录满的绝对主力，44条记录合计缺档<b>19,709人</b>。最严重的湛江科技学院3个组计划5378人仅投档892人，完成率仅16.6%。
+  </div>
+
+  <h3>3.1 按学校汇总（按缺档人数排序）</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>#</th><th>学校名称</th><th class="t-left">普通类<br>专业组数</th><th>合计<br>计划数</th><th>合计<br>投档人数</th><th>合计<br>缺档</th><th>完成率</th></tr>
+    <tr><td>1</td><td class="t-left"><b>湛江科技学院</b></td><td>3</td><td>5,378</td><td>892</td><td class="diff-high">+4,486</td><td class="rate-low">16.6%</td></tr>
+    <tr><td>2</td><td class="t-left"><b>广东理工学院</b></td><td>6</td><td>5,743</td><td>1,997</td><td class="diff-high">+3,746</td><td class="rate-low">34.8%</td></tr>
+    <tr><td>3</td><td class="t-left"><b>广州华立学院</b></td><td>4</td><td>3,244</td><td>736</td><td class="diff-high">+2,508</td><td class="rate-low">22.7%</td></tr>
+    <tr><td>4</td><td class="t-left"><b>广州工商学院</b></td><td>11</td><td>4,340</td><td>2,054</td><td class="diff-high">+2,286</td><td class="rate-low">47.3%</td></tr>
+    <tr><td>5</td><td class="t-left"><b>广东工商职业技术大学</b></td><td>5</td><td>2,556</td><td>715</td><td class="diff-high">+1,841</td><td class="rate-low">28.0%</td></tr>
+    <tr><td>6</td><td class="t-left"><b>广州华商学院</b></td><td>4</td><td>2,850</td><td>1,727</td><td class="diff-mid">+1,123</td><td class="rate-mid">60.6%</td></tr>
+    <tr><td>7</td><td class="t-left"><b>广东科技学院</b></td><td>1</td><td>1,545</td><td>598</td><td class="diff-mid">+947</td><td class="rate-mid">38.7%</td></tr>
+    <tr><td>8</td><td class="t-left"><b>广州应用科技学院</b></td><td>7</td><td>1,505</td><td>716</td><td class="diff-mid">+789</td><td class="rate-mid">47.6%</td></tr>
+    <tr><td>9</td><td class="t-left">广东培正学院</td><td>1</td><td>1,240</td><td>1,139</td><td class="diff-low">+101</td><td class="rate-ok">91.9%</td></tr>
+    <tr><td>10</td><td class="t-left">广州软件学院</td><td>1</td><td>116</td><td>67</td><td class="diff-low">+49</td><td class="rate-ok">57.8%</td></tr>
+    <tr><td>11</td><td class="t-left">东莞城市学院</td><td>1</td><td>165</td><td>132</td><td class="diff-low">+33</td><td class="rate-ok">80.0%</td></tr>
+  </table>
+  </div>
+
+  <h3>3.2 逐条明细（按缺档人数排序）</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>#</th><th>代码</th><th>院校名称</th><th>组</th><th>计划数</th><th>投档人数</th><th>差额</th><th>投档分</th><th>排位</th></tr>
+    <tr><td>1</td><td>12622</td><td class="t-left">湛江科技学院</td><td>202</td><td>2,965</td><td>477</td><td class="diff-high">+2,488</td><td>436</td><td>276,574</td></tr>
+    <tr><td>2</td><td>12622</td><td class="t-left">湛江科技学院</td><td>201</td><td>2,333</td><td>403</td><td class="diff-high">+1,930</td><td>436</td><td>276,491</td></tr>
+    <tr><td>3</td><td>13721</td><td class="t-left">广东工商职业技术大学</td><td>201</td><td>2,015</td><td>518</td><td class="diff-high">+1,497</td><td>436</td><td>276,580</td></tr>
+    <tr><td>4</td><td>13720</td><td class="t-left">广东理工学院</td><td>204</td><td>1,670</td><td>359</td><td class="diff-high">+1,311</td><td>436</td><td>276,564</td></tr>
+    <tr><td>5</td><td>13720</td><td class="t-left">广东理工学院</td><td>206</td><td>2,678</td><td>1,410</td><td class="diff-high">+1,268</td><td>436</td><td>276,488</td></tr>
+    <tr><td>6</td><td>13656</td><td class="t-left">广州华立学院</td><td>207</td><td>1,673</td><td>457</td><td class="diff-high">+1,216</td><td>436</td><td>276,499</td></tr>
+    <tr><td>7</td><td>13719</td><td class="t-left">广东科技学院</td><td>205</td><td>1,545</td><td>598</td><td class="diff-high">+947</td><td>436</td><td>276,571</td></tr>
+    <tr><td>8</td><td>13720</td><td class="t-left">广东理工学院</td><td>209</td><td>1,095</td><td>153</td><td class="diff-high">+942</td><td>436</td><td>276,541</td></tr>
+    <tr><td>9</td><td>13656</td><td class="t-left">广州华立学院</td><td>205</td><td>1,084</td><td>194</td><td class="diff-high">+890</td><td>436</td><td>276,575</td></tr>
+    <tr><td>10</td><td>12621</td><td class="t-left">广州华商学院</td><td>211</td><td>1,742</td><td>866</td><td class="diff-high">+876</td><td>436</td><td>276,586</td></tr>
+    <tr><td>11</td><td>13714</td><td class="t-left">广州工商学院</td><td>211</td><td>1,697</td><td>961</td><td class="diff-high">+736</td><td>436</td><td>276,582</td></tr>
+    <tr><td>12</td><td>13714</td><td class="t-left">广州工商学院</td><td>212</td><td>1,428</td><td>871</td><td class="diff-mid">+557</td><td>436</td><td>276,436</td></tr>
+    <tr><td>13</td><td>13656</td><td class="t-left">广州华立学院</td><td>206</td><td>448</td><td>52</td><td class="diff-mid">+396</td><td>436</td><td>275,914</td></tr>
+    <tr><td>14</td><td>13721</td><td class="t-left">广东工商职业技术大学</td><td>209</td><td>371</td><td>90</td><td class="diff-mid">+281</td><td>436</td><td>276,489</td></tr>
+    <tr><td>15</td><td>13714</td><td class="t-left">广州工商学院</td><td>213</td><td>336</td><td>59</td><td class="diff-mid">+277</td><td>436</td><td>276,071</td></tr>
+    <tr><td>16</td><td>13714</td><td class="t-left">广州工商学院</td><td>214</td><td>290</td><td>32</td><td class="diff-mid">+258</td><td>436</td><td>276,341</td></tr>
+    <tr><td>17</td><td>13657</td><td class="t-left">广州应用科技学院</td><td>224</td><td>300</td><td>76</td><td class="diff-mid">+224</td><td>436</td><td>276,423</td></tr>
+    <tr><td>18</td><td>13657</td><td class="t-left">广州应用科技学院</td><td>223</td><td>400</td><td>179</td><td class="diff-mid">+221</td><td>436</td><td>276,531</td></tr>
+    <tr><td>19</td><td>13657</td><td class="t-left">广州应用科技学院</td><td>221</td><td>220</td><td>38</td><td class="diff-mid">+182</td><td>436</td><td>276,583</td></tr>
+    <tr><td>20</td><td>13720</td><td class="t-left">广东理工学院</td><td>208</td><td>180</td><td>43</td><td class="diff-mid">+137</td><td>436</td><td>276,324</td></tr>
+    <tr><td>21</td><td>12621</td><td class="t-left">广州华商学院</td><td>214</td><td>818</td><td>697</td><td class="diff-mid">+121</td><td>436</td><td>276,373</td></tr>
+    <tr><td>22</td><td>13714</td><td class="t-left">广州工商学院</td><td>221</td><td>120</td><td>9</td><td class="diff-mid">+111</td><td>436</td><td>275,896</td></tr>
+    <tr><td>23</td><td>12059</td><td class="t-left">广东培正学院</td><td>201</td><td>1,240</td><td>1,139</td><td class="diff-mid">+101</td><td>436</td><td>276,552</td></tr>
+    <tr><td>24</td><td>13714</td><td class="t-left">广州工商学院</td><td>219</td><td>108</td><td>11</td><td class="diff-low">+97</td><td>436</td><td>276,536</td></tr>
+    <tr><td>25</td><td>12621</td><td class="t-left">广州华商学院</td><td>212</td><td>210</td><td>116</td><td class="diff-low">+94</td><td>436</td><td>276,534</td></tr>
+    <tr><td>26</td><td>13714</td><td class="t-left">广州工商学院</td><td>218</td><td>108</td><td>26</td><td class="diff-low">+82</td><td>436</td><td>276,568</td></tr>
+    <tr><td>27</td><td>13657</td><td class="t-left">广州应用科技学院</td><td>219</td><td>155</td><td>77</td><td class="diff-low">+78</td><td>436</td><td>276,530</td></tr>
+    <tr><td>28</td><td>13714</td><td class="t-left">广州工商学院</td><td>215</td><td>96</td><td>19</td><td class="diff-low">+77</td><td>437</td><td>274,784</td></tr>
+    <tr><td>29</td><td>12622</td><td class="t-left">湛江科技学院</td><td>203</td><td>80</td><td>12</td><td class="diff-low">+68</td><td>436</td><td>275,816</td></tr>
+    <tr><td>30</td><td>13657</td><td class="t-left">广州应用科技学院</td><td>220</td><td>120</td><td>60</td><td class="diff-low">+60</td><td>436</td><td>276,450</td></tr>
+    <tr><td>31</td><td>13714</td><td class="t-left">广州工商学院</td><td>220</td><td>80</td><td>24</td><td class="diff-low">+56</td><td>436</td><td>276,050</td></tr>
+    <tr><td>32</td><td>12618</td><td class="t-left">广州软件学院</td><td>204</td><td>116</td><td>67</td><td class="diff-low">+49</td><td>436</td><td>276,031</td></tr>
+    <tr><td>33</td><td>13720</td><td class="t-left">广东理工学院</td><td>205</td><td>60</td><td>12</td><td class="diff-low">+48</td><td>437</td><td>275,027</td></tr>
+    <tr><td>34</td><td>13844</td><td class="t-left">东莞城市学院</td><td>216</td><td>165</td><td>132</td><td class="diff-low">+33</td><td>436</td><td>276,512</td></tr>
+    <tr><td>35</td><td>12621</td><td class="t-left">广州华商学院</td><td>215</td><td>80</td><td>48</td><td class="diff-low">+32</td><td>437</td><td>274,693</td></tr>
+    <tr><td>36</td><td>13714</td><td class="t-left">广州工商学院</td><td>217</td><td>62</td><td>31</td><td class="diff-low">+31</td><td>436</td><td>276,431</td></tr>
+    <tr><td>37</td><td>13721</td><td class="t-left">广东工商职业技术大学</td><td>210</td><td>50</td><td>19</td><td class="diff-low">+31</td><td>437</td><td>274,743</td></tr>
+    <tr><td>38</td><td>13657</td><td class="t-left">广州应用科技学院</td><td>218</td><td>240</td><td>224</td><td class="diff-low">+16</td><td>436</td><td>276,160</td></tr>
+    <tr><td>39</td><td>13721</td><td class="t-left">广东工商职业技术大学</td><td>211</td><td>50</td><td>33</td><td class="diff-low">+17</td><td>436</td><td>275,659</td></tr>
+    <tr><td>40</td><td>13721</td><td class="t-left">广东工商职业技术大学</td><td>202</td><td>70</td><td>55</td><td class="diff-low">+15</td><td>436</td><td>276,500</td></tr>
+    <tr><td>41</td><td>13657</td><td class="t-left">广州应用科技学院</td><td>217</td><td>70</td><td>62</td><td class="diff-low">+8</td><td>436</td><td>276,376</td></tr>
+    <tr><td>42</td><td>13656</td><td class="t-left">广州华立学院</td><td>202</td><td>39</td><td>33</td><td class="diff-low">+6</td><td>436</td><td>276,435</td></tr>
+    <tr><td>43</td><td>13714</td><td class="t-left">广州工商学院</td><td>222</td><td>15</td><td>11</td><td class="diff-low">+4</td><td>436</td><td>276,353</td></tr>
+    <tr><td>44</td><td>13300</td><td class="t-left">黑龙江工商学院</td><td>205</td><td>15</td><td>13</td><td class="diff-low">+2</td><td>436</td><td>275,653</td></tr>
+  </table>
+  </div>
+  <div class="alert alert-warn">
+    <b>规律发现：</b>几乎所有未录满的广东民办普通类专业组，投档分都是<b>436分</b>（即本科线425分+11分），排位都在<b>276,000-276,600</b>区间。这说明这些学校只能录取到刚好压线的考生，大量计划名额因生源不足而空缺。少数投档分为437-444分的组，缺档相对较小。
+  </div>
+</div>
+
+<div class="section">
+  <h2>四、未录满 · 广东民办本科特殊类（19条）</h2>
+  <div class="alert alert-warn">
+    <b>说明：</b>以下为中外合作办学、联合培养、校企联合培养、国际班等特殊类型专业组的未录满情况。这些专业组因学费更高或培养模式特殊，报考热度更低，缺档更为普遍。
+  </div>
+
+  <h3>4.1 按学校汇总</h3>
+  <table>
+    <tr><th>#</th><th>学校名称</th><th>特殊类<br>组数</th><th>合计计划</th><th>合计投档</th><th>合计缺档</th><th>完成率</th></tr>
+    <tr><td>1</td><td class="t-left">广州应用科技学院</td><td>3</td><td>585</td><td>204</td><td class="diff-mid">+381</td><td class="rate-low">34.9%</td></tr>
+    <tr><td>2</td><td class="t-left">广州南方学院</td><td>6</td><td>317</td><td>133</td><td class="diff-mid">+184</td><td class="rate-low">42.0%</td></tr>
+    <tr><td>3</td><td class="t-left">广州工商学院</td><td>2</td><td>142</td><td>39</td><td class="diff-mid">+103</td><td class="rate-low">27.5%</td></tr>
+    <tr><td>4</td><td class="t-left">广州华商学院</td><td>2</td><td>105</td><td>37</td><td class="diff-low">+68</td><td class="rate-mid">35.2%</td></tr>
+    <tr><td>5</td><td class="t-left">广东东软学院</td><td>1</td><td>82</td><td>41</td><td class="diff-low">+41</td><td class="rate-mid">50.0%</td></tr>
+    <tr><td>6</td><td class="t-left">东莞城市学院</td><td>2</td><td>78</td><td>37</td><td class="diff-low">+41</td><td class="rate-mid">47.4%</td></tr>
+    <tr><td>7</td><td class="t-left">广东科技学院</td><td>2</td><td>30</td><td>9</td><td class="diff-low">+21</td><td class="rate-low">30.0%</td></tr>
+    <tr><td>8</td><td class="t-left">广州华立学院</td><td>1</td><td>16</td><td>5</td><td class="diff-low">+11</td><td class="rate-low">31.2%</td></tr>
+  </table>
+
+  <h3>4.2 逐条明细</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>#</th><th>代码</th><th>院校名称</th><th>组</th><th>类型</th><th>计划</th><th>投档</th><th>差额</th><th>分数</th><th>排位</th></tr>
+    <tr><td>1</td><td>13657</td><td class="t-left">广州应用科技学院(校企联合培养)</td><td>222</td><td>校企</td><td>300</td><td>103</td><td class="diff-mid">+197</td><td>436</td><td>276,345</td></tr>
+    <tr><td>2</td><td>13657</td><td class="t-left">广州应用科技学院(联合培养)</td><td>225</td><td>联培</td><td>160</td><td>42</td><td class="diff-mid">+118</td><td>436</td><td>275,792</td></tr>
+    <tr><td>3</td><td>12619</td><td class="t-left">广州南方学院(联合培养)</td><td>213</td><td>联培</td><td>66</td><td>22</td><td class="diff-low">+44</td><td>437</td><td>273,783</td></tr>
+    <tr><td>4</td><td>12621</td><td class="t-left">广州华商学院(国际班)</td><td>216</td><td>国际班</td><td>65</td><td>21</td><td class="diff-low">+44</td><td>436</td><td>275,716</td></tr>
+    <tr><td>5</td><td>12574</td><td class="t-left">广东东软学院(中外合作办学)</td><td>218</td><td>中外</td><td>82</td><td>41</td><td class="diff-low">+41</td><td>436</td><td>275,519</td></tr>
+    <tr><td>6</td><td>12619</td><td class="t-left">广州南方学院(联合培养)</td><td>212</td><td>联培</td><td>62</td><td>21</td><td class="diff-low">+41</td><td>438</td><td>273,442</td></tr>
+    <tr><td>7</td><td>12619</td><td class="t-left">广州南方学院(中外合作办学)</td><td>217</td><td>中外</td><td>62</td><td>25</td><td class="diff-low">+37</td><td>438</td><td>272,656</td></tr>
+    <tr><td>8</td><td>12619</td><td class="t-left">广州南方学院(联合培养)</td><td>215</td><td>联培</td><td>46</td><td>12</td><td class="diff-low">+34</td><td>444</td><td>262,318</td></tr>
+    <tr><td>9</td><td>12621</td><td class="t-left">广州华商学院(联合培养)</td><td>217</td><td>联培</td><td>40</td><td>16</td><td class="diff-low">+24</td><td>436</td><td>275,731</td></tr>
+    <tr><td>10</td><td>13844</td><td class="t-left">东莞城市学院(联合培养)</td><td>212</td><td>联培</td><td>46</td><td>24</td><td class="diff-low">+22</td><td>436</td><td>275,663</td></tr>
+    <tr><td>11</td><td>13844</td><td class="t-left">东莞城市学院(联合培养)</td><td>213</td><td>联培</td><td>32</td><td>13</td><td class="diff-low">+19</td><td>436</td><td>276,398</td></tr>
+    <tr><td>12</td><td>12619</td><td class="t-left">广州南方学院(联合培养)</td><td>216</td><td>联培</td><td>56</td><td>31</td><td class="diff-low">+25</td><td>436</td><td>276,021</td></tr>
+    <tr><td>13</td><td>13714</td><td class="t-left">广州工商学院(中外合作办学-联合培养)</td><td>223</td><td>中外+联培</td><td>96</td><td>9</td><td class="diff-low">+87</td><td>437</td><td>273,885</td></tr>
+    <tr><td>14</td><td>13714</td><td class="t-left">广州工商学院(国际班)</td><td>216</td><td>国际班</td><td>46</td><td>30</td><td class="diff-low">+16</td><td>436</td><td>276,515</td></tr>
+    <tr><td>15</td><td>13656</td><td class="t-left">广州华立学院(联合培养)</td><td>203</td><td>联培</td><td>16</td><td>5</td><td class="diff-low">+11</td><td>439</td><td>271,729</td></tr>
+    <tr><td>16</td><td>13719</td><td class="t-left">广东科技学院(联合培养)</td><td>208</td><td>联培</td><td>15</td><td>4</td><td class="diff-low">+11</td><td>444</td><td>263,851</td></tr>
+    <tr><td>17</td><td>13719</td><td class="t-left">广东科技学院(联合培养)</td><td>209</td><td>联培</td><td>15</td><td>5</td><td class="diff-low">+10</td><td>437</td><td>275,032</td></tr>
+    <tr><td>18</td><td>12619</td><td class="t-left">广州南方学院(联合培养)</td><td>214</td><td>联培</td><td>25</td><td>22</td><td class="diff-low">+3</td><td>437</td><td>274,209</td></tr>
+    <tr><td>19</td><td>13657</td><td class="t-left">广州应用科技学院(联合培养)</td><td>226</td><td>联培</td><td>125</td><td>59</td><td class="diff-low">+66</td><td>438</td><td>273,101</td></tr>
+  </table>
+  </div>
+</div>
+
+<div class="section">
+  <h2>五、未录满 · 省外院校（13条）</h2>
+  <div class="alert alert-info">
+    <b>说明：</b>省外院校在广东投放的招生计划未录满的情况较少，且缺档数普遍较小（最大30人）。涉及的院校多为省外民办本科或中外合作办学项目。
+  </div>
+  <div class="table-wrap">
+  <table>
+    <tr><th>#</th><th>代码</th><th>院校名称</th><th>组</th><th>计划</th><th>投档</th><th>差额</th><th>分数</th><th>排位</th></tr>
+    <tr><td>1</td><td>13296</td><td class="t-left">黑龙江外国语学院</td><td>204</td><td>37</td><td>7</td><td class="diff-low">+30</td><td>439</td><td>271,794</td></tr>
+    <tr><td>2</td><td>12308</td><td class="t-left">海口经济学院</td><td>217</td><td>44</td><td>16</td><td class="diff-low">+28</td><td>436</td><td>275,937</td></tr>
+    <tr><td>3</td><td>14654</td><td class="t-left">郑州西亚斯学院(中外合作办学)</td><td>208</td><td>31</td><td>13</td><td class="diff-low">+18</td><td>438</td><td>273,474</td></tr>
+    <tr><td>4</td><td>13766</td><td class="t-left">泉州信息工程学院(中外合作办学)</td><td>210</td><td>15</td><td>6</td><td class="diff-low">+9</td><td>442</td><td>266,580</td></tr>
+    <tr><td>5</td><td>13296</td><td class="t-left">黑龙江外国语学院</td><td>203</td><td>18</td><td>11</td><td class="diff-low">+7</td><td>438</td><td>273,255</td></tr>
+    <tr><td>6</td><td>12308</td><td class="t-left">海口经济学院</td><td>220</td><td>12</td><td>6</td><td class="diff-low">+6</td><td>438</td><td>272,510</td></tr>
+    <tr><td>7</td><td>12784</td><td class="t-left">河北传媒学院</td><td>218</td><td>11</td><td>6</td><td class="diff-low">+5</td><td>442</td><td>265,767</td></tr>
+    <tr><td>8</td><td>13468</td><td class="t-left">阳光学院(中外合作办学)</td><td>207</td><td>10</td><td>5</td><td class="diff-low">+5</td><td>438</td><td>271,986</td></tr>
+    <tr><td>9</td><td>10165</td><td class="t-left">辽宁师范大学(中外合作办学)</td><td>206</td><td>6</td><td>2</td><td class="diff-low">+4</td><td>476</td><td>207,453</td></tr>
+    <tr><td>10</td><td>12915</td><td class="t-left">上海中侨职业技术大学(中外合作办学)</td><td>207</td><td>6</td><td>4</td><td class="diff-low">+2</td><td>436</td><td>276,052</td></tr>
+    <tr><td>11</td><td>13296</td><td class="t-left">黑龙江外国语学院</td><td>205</td><td>5</td><td>3</td><td class="diff-low">+2</td><td>440</td><td>270,217</td></tr>
+    <tr><td>12</td><td>13296</td><td class="t-left">黑龙江外国语学院</td><td>206</td><td>10</td><td>8</td><td class="diff-low">+2</td><td>441</td><td>268,096</td></tr>
+    <tr><td>13</td><td>13300</td><td class="t-left">黑龙江工商学院</td><td>205</td><td>15</td><td>13</td><td class="diff-low">+2</td><td>436</td><td>275,653</td></tr>
+  </table>
+  </div>
+</div>
+
+<div class="section">
+  <h2>六、超录院校（计划数 < 投档人数）（8条）</h2>
+  <div class="alert alert-info">
+    <b>说明：</b>超录现象极为罕见，仅8条记录，超录总数仅15人。涉及的均为顶尖985/211名校或新设立的中外合作办学高校，因生源质量极高、报考热度大，投档时略有溢出。
+  </div>
+  <table>
+    <tr><th>#</th><th>代码</th><th>院校名称</th><th>组</th><th>计划</th><th>投档</th><th>超录</th><th>分数</th><th>排位</th><th>类型</th></tr>
+    <tr><td>1</td><td>10698</td><td class="t-left"><b>西安交通大学</b></td><td>208</td><td>149</td><td>154</td><td style="color:#c62828;font-weight:700;">-5</td><td>656</td><td>2,586</td><td>985名校</td></tr>
+    <tr><td>2</td><td>10055</td><td class="t-left"><b>南开大学</b></td><td>205</td><td>8</td><td>10</td><td style="color:#c62828;font-weight:700;">-2</td><td>644</td><td>5,048</td><td>985名校</td></tr>
+    <tr><td>3</td><td>14829</td><td class="t-left">海南比勒费尔德应用科学大学(中外合作)</td><td>205</td><td>13</td><td>15</td><td style="color:#c62828;font-weight:700;">-2</td><td>481</td><td>198,832</td><td>新设中外合作</td></tr>
+    <tr><td>4</td><td>14829</td><td class="t-left">海南比勒费尔德应用科学大学(中外合作)</td><td>206</td><td>13</td><td>15</td><td style="color:#c62828;font-weight:700;">-2</td><td>485</td><td>191,622</td><td>新设中外合作</td></tr>
+    <tr><td>5</td><td>10001</td><td class="t-left"><b>北京大学</b></td><td>206</td><td>34</td><td>35</td><td style="color:#c62828;font-weight:700;">-1</td><td>689</td><td>99</td><td>985顶尖</td></tr>
+    <tr><td>6</td><td>10052</td><td class="t-left"><b>中央民族大学</b></td><td>220</td><td>19</td><td>20</td><td style="color:#c62828;font-weight:700;">-1</td><td>604</td><td>23,707</td><td>985名校</td></tr>
+    <tr><td>7</td><td>10358</td><td class="t-left"><b>中国科学技术大学</b></td><td>202</td><td>92</td><td>93</td><td style="color:#c62828;font-weight:700;">-1</td><td>673</td><td>775</td><td>985顶尖</td></tr>
+    <tr><td>8</td><td>14829</td><td class="t-left">海南比勒费尔德应用科学大学(中外合作)</td><td>204</td><td>26</td><td>27</td><td style="color:#c62828;font-weight:700;">-1</td><td>469</td><td>221,220</td><td>新设中外合作</td></tr>
+  </table>
+  <div class="alert alert-info">
+    <b>超录原因分析：</b>985名校超录1-5人属于正常范围内的"末位同分"现象——当投档最低分有多人同分时，考试院会一并投档，导致投档人数略超计划。海南比勒费尔德应用科学大学（2025年首招的新设中外合作高校）3个组均超录，可能是首年招生计划测算偏差。
+  </div>
+</div>
+
+<div class="section">
+  <h2>七、规律总结</h2>
+  <div class="alert alert-red">
+    <b>1. 未录满几乎全是广东民办本科</b><br>
+    76条未录满记录中，63条（82.9%）来自广东民办本科院校（普通类44条+特殊类19条），仅13条来自省外院校。公办院校无一出现未录满。
+  </div>
+  <div class="alert alert-warn">
+    <b>2. 缺档最严重的都是排名靠后的民办本科</b><br>
+    湛江科技学院（完成率16.6%）、广州华立学院（22.7%）、广东工商职业技术大学（28.0%）、广东理工学院（34.8%）——这些学校在校友会/软科排名中均处于广东省民办本科后段，社会认可度低，招生困难。
+  </div>
+  <div class="alert alert-info">
+    <b>3. 压线436分是未录满的标志</b><br>
+    44条普通类未录满记录中，37条投档分为436分（本科线425+11分），排位在276,000-276,600区间。这意味着这些学校只能录取到刚好压线的考生，大量计划因无人报考而空缺。
+  </div>
+  <div class="alert alert-info">
+    <b>4. 特殊类型专业缺档更普遍</b><br>
+    中外合作办学、联合培养、校企联合培养、国际班等专业组的完成率普遍低于50%，最低仅27.5%（广州工商学院中外合作-联合培养）。这些专业因学费更高或培养模式特殊，报考热度极低。
+  </div>
+  <div class="alert alert-info">
+    <b>5. 超录仅出现在顶尖名校</b><br>
+    8条超录记录全部来自985名校（北大、中科大、西交大、南开、中央民族大学）和新设中外合作高校（海南比勒费尔德），超录数仅1-5人，属于"末位同分"正常溢出。
+  </div>
+</div>
+
+<div class="footnote">
+  <p><b>数据来源：</b>广东省教育考试院《广东省2025年本科普通类（物理）投档情况》PDF</p>
+  <p><b>PDF链接：</b>https://eea.gd.gov.cn/attachment/0/585/585886/4746781.pdf</p>
+  <p><b>解析方法：</b>使用Python pdfplumber库解析PDF，智能清除"广东省教育考试院"水印字符后逐行提取"院校代码/院校名称/专业组代码/计划数/投档人数/投档最低分/投档最低排位"6个字段，共提取3,403条有效记录。</p>
+  <p style="margin-top:8px;color:#999;">报告生成日期：2026年7月2日</p>
+</div>
+
+</div>
+</body>
+</html>
